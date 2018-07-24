@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "525481537619",
+    "firebase_url": "https://personscontrol.firebaseio.com",
+    "project_id": "personscontrol",
+    "storage_bucket": "personscontrol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525481537619:android:d3f4b0c2833b085f",
+        "android_client_info": {
+          "package_name": "com.example.artem.personscontrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525481537619-v01hfd5idb6g5kami1b2ruecf2c8pgdh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artem.personscontrol",
+            "certificate_hash": "7cad3a6f3f1d0505935c671ab2610c3faee20cfa"
+          }
+        },
+        {
+          "client_id": "525481537619-6bm5kostqh45tj4hcgo7jgbbtk7trstf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artem.personscontrol",
+            "certificate_hash": "e8de269466a70d54f15e2a5b75b75644460d44b2"
+          }
+        },
+        {
+          "client_id": "525481537619-mah5dq879gfb5cepr696d3fq8eo855cs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7DmyIcgnvuzmNRB6RcfHODsx1KMWSGA8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525481537619-mah5dq879gfb5cepr696d3fq8eo855cs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
