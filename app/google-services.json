@@ -31,6 +31,22 @@
           }
         },
         {
+          "client_id": "525481537619-fl20nq9tt57985vorprntgdpg7jfcmr7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artem.personscontrol",
+            "certificate_hash": "ea9a7a5d8eabdd55c5e6ae46953ce3441711702a"
+          }
+        },
+        {
+          "client_id": "525481537619-3vled8f664gq3rs2q9fm8kaj4c60unea.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artem.personscontrol",
+            "certificate_hash": "423edf8d167e22a2743192f895f3aa35810e0f5a"
+          }
+        },
+        {
           "client_id": "525481537619-mah5dq879gfb5cepr696d3fq8eo855cs.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -50,6 +66,13 @@
             {
               "client_id": "525481537619-mah5dq879gfb5cepr696d3fq8eo855cs.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "525481537619-ah03r400e9bve4gpb9kqo4fo4qqcmd23.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "DiphlomaProject.PersonsControl-IOS"
+              }
             }
           ]
         },
