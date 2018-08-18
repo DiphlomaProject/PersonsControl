@@ -44,5 +44,6 @@ dependencies {
     // Google Sign In SDK (only required for Google Sign In)
     implementation 'com.google.android.gms:play-services-auth:16.0.0'
 
+    compile project(":Volley_by_Google")
 }
 apply plugin: 'com.google.gms.google-services'
