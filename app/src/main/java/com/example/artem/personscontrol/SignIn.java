@@ -75,10 +75,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         mAuth = FirebaseAuth.getInstance();
 
         //snackbar
-        snackbar = Snackbar.make(findViewById(R.id.scrollViewLogin), "snackbar", Snackbar.LENGTH_LONG);
+
     }
 
     public void GoogleSignInSnackBar(FirebaseUser user){
+        snackbar = Snackbar.make(findViewById(R.id.scrollViewLogin), "snackbar", Snackbar.LENGTH_LONG);
         snackbar.setText("Welcome " + user.getDisplayName());
         snackbar.setAction(R.string.sign_out, new View.OnClickListener() {
             @Override
@@ -195,4 +196,6 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
 
         //updateUI(null);
     }
+
+
 }

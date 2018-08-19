@@ -2,20 +2,20 @@ package com.example.artem.personscontrol;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
@@ -23,8 +23,18 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 public class NavigationActivity extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, Network_connections.VolleyCallbackNetworkInterface {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +53,8 @@ public class NavigationActivity extends BaseActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         // При старте активности получить параметры из намерения
-        Intent intent = getIntent();
-        int actionInt = intent.getIntExtra("type_of_action_with_user",-1);
+        //Intent intent = getIntent();
+        //int actionInt = intent.getIntExtra("type_of_action_with_user",-1);
 
         /*if(actionInt == preferences_singleton.WRITE_USER_INFO)
             NewUser();
@@ -60,6 +70,8 @@ public class NavigationActivity extends BaseActivity
 
         userEmail = hView.findViewById(R.id.userEmail);
         userName = hView.findViewById(R.id.userName);*/
+        Data_Singleton.network_connections.RegisterCallBack(this);
+        Data_Singleton.network_connections.RestApiInfo(this);
     }
 
     @Override
@@ -158,5 +170,15 @@ public class NavigationActivity extends BaseActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void callbackRestApiInfo(JSONObject response) {
+        try {
+            Map<String, Object> map = Network_connections.toMap(response);
+            Log.e("JSONObject to Map", "accept");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
