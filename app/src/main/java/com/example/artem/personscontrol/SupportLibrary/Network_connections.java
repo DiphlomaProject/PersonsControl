@@ -12,6 +12,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.SignIn;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -106,4 +107,41 @@ public class Network_connections {
         // Access the RequestQueue through your singleton class.
         //MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
     }
+
+    public void GoogleSignInRequest(final Context context, String displayName, String email, String phone){
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        String additionalUrl  = "api/Users/GoogleSignIn";
+        Map<String, String> mParams = new HashMap<String, String>();
+        mParams.put("displayName", displayName);
+        mParams.put("email", email);
+        mParams.put("phone", phone);
+        JSONObject parameters = new JSONObject(mParams);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        volleyCallback.callbackRestApiInfo(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        Log.e("Volley GoogleSignInRequest error : ", error.toString());
+                        ((SignIn)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
+
+
 }
+

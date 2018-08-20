@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -24,12 +25,20 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class SignIn extends BaseActivity implements View.OnClickListener {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.Map;
+
+public class SignIn extends BaseActivity implements View.OnClickListener, Network_connections.VolleyCallbackNetworkInterface {
 
     private static final String TAG_Email = "EmailPassword";
     private static final String TAG_Google = "GoogleLogIn";
     private static final int RC_GOOGLE_SIGN_IN = 9001;
     private static final int RC_GOOGLE_SIGN_LOGOUT = 8001;
+
+    Network_connections network_connections;
+    int networkAction = -1; // 0 - Google SignIn 1 - SignIn
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -47,6 +56,8 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        network_connections = new Network_connections();
+        network_connections.RegisterCallBack(this);
 
         this.setTitle("Welcome");
         activity_login = this;
@@ -78,15 +89,15 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
 
     }
 
-    public void GoogleSignInSnackBar(FirebaseUser user){
-        snackbar = Snackbar.make(findViewById(R.id.scrollViewLogin), "snackbar", Snackbar.LENGTH_LONG);
-        snackbar.setText("Welcome " + user.getDisplayName());
-        snackbar.setAction(R.string.sign_out, new View.OnClickListener() {
+    public void GoogleSignInSnackBar(String message){
+        snackbar = Snackbar.make(findViewById(R.id.scrollViewLogin), message, Snackbar.LENGTH_LONG);
+        //snackbar.setText("Welcome " + user.getDisplayName());
+        /*snackbar.setAction(R.string.sign_out, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 signOut();
             }
-        });
+        });*/
         snackbar.show();
     }
 
@@ -96,11 +107,9 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null) {
-            GoogleSignInSnackBar(currentUser);
-            Intent intent = new Intent(this, NavigationActivity.class);
-            // Старт активности без возврата результата
-            startActivity(intent);
-            finish();
+            //GoogleSignInSnackBar(currentUser);
+            showProgressDialog();
+            GoogleSignInApi(currentUser);
         }
     }
 
@@ -122,6 +131,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
 
 
     private void signIn() {
+        showProgressDialog();
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_GOOGLE_SIGN_IN);
     }
@@ -137,17 +147,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
-                // Создать намерение, которое показывает, какую активность вызвать
-                // и содержит необходимые параметры
-                Intent intent = new Intent(this, NavigationActivity.class);
-                // Старт активности без возврата результата
-                startActivity(intent);
-                finish();
-
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG_Google, "Google sign in failed", e);
                 // ...
+                hideProgressDialog();
             }
         }
     }
@@ -164,21 +168,19 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG_Google, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            GoogleSignInSnackBar(user);
+                            //GoogleSignInSnackBar(user);
+                            GoogleSignInApi(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG_Google, "signInWithCredential:failure", task.getException());
                             //Snackbar.make(findViewById(R.id.main_layout), "Authentication Failed.", Snackbar.LENGTH_SHORT).show();
                             //updateUI(null);
+                            hideProgressDialog();
                         }
 
                         // ...
                     }
                 });
-    }
-
-    private void AddUserToDatabase(){
-
     }
 
     private void signOut() {
@@ -195,7 +197,44 @@ public class SignIn extends BaseActivity implements View.OnClickListener {
                 });
 
         //updateUI(null);
+        hideProgressDialog();
+    }
+
+    private void GoogleSignInApi(FirebaseUser account){
+        networkAction = 0;
+        network_connections.GoogleSignInRequest(this, account.getDisplayName(), account.getEmail(), account.getPhoneNumber());
     }
 
 
+    @Override
+    public void callbackRestApiInfo(JSONObject response) {
+        try {
+            switch (networkAction){
+                case 0 :
+
+                    Map<String, Object> map = Network_connections.toMap(response);
+                    //int e = Log.e("JSONObject to Map", "accept");
+                    if ((int)map.get("code") == 202 || (int)map.get("code") == 200){
+                        // Создать намерение, которое показывает, какую активность вызвать
+                        // и содержит необходимые параметры
+                        Intent intent = new Intent(this, NavigationActivity.class);
+                        // Старт активности без возврата результата
+                        startActivity(intent);
+                        finish();
+                    } else
+                        this.signOut();
+                    break;
+                case 1:
+                    break;
+                default:
+                    this.signOut();
+                    break;
+            }//switch
+        } catch (JSONException e) {
+            e.printStackTrace();
+            this.signOut();
+            this.GoogleSignInSnackBar("Json (GoogleApi) parser response error.");
+        }
+    }
 }
+
