@@ -142,6 +142,38 @@ public class Network_connections {
         queue.add(jsonObjectRequest);
     }
 
+    public void SignInRequest(final Context context, String email, String password){
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        String additionalUrl  = "api/Users/SignIn";
+        Map<String, String> mParams = new HashMap<String, String>();
+        mParams.put("email", email);
+        mParams.put("password", password);
+        JSONObject parameters = new JSONObject(mParams);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        volleyCallback.callbackRestApiInfo(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        Log.e("Volley SignInRequest error : ", error.toString());
+                        ((SignIn)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
 
 }
 

@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.artem.personscontrol.AspNet_Classes.User;
+import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -118,15 +120,27 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
         int i = v.getId();
         /*if (i == R.id.email_create_account_button) {
             createAccount(mEmailField.getText().toString(), mPasswordField.getText().toString());
-        } else if (i == R.id.email_sign_in_button) {
+        } else*/
+        if (i == R.id.email_sign_in_button) {
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
-        }else*/ if (i == R.id.sign_in_button) { //google button
+        }else if (i == R.id.sign_in_button) { //google button
             signIn();
         }/*else if (i == R.id.verify_email_button) {
             sendEmailVerification();
         }else if (i == R.id.reset_password_button){
             resetPassword();
         }*/
+    }
+
+    private void signIn(String email, String password){
+        if(email.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Fill email and password correct", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        showProgressDialog();
+        networkAction = 1;
+        network_connections.SignInRequest(this, email, password);
     }
 
 
@@ -209,12 +223,26 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
     @Override
     public void callbackRestApiInfo(JSONObject response) {
         try {
+            Map<String, Object> map = Network_connections.toMap(response);
             switch (networkAction){
                 case 0 :
 
-                    Map<String, Object> map = Network_connections.toMap(response);
                     //int e = Log.e("JSONObject to Map", "accept");
+//                    if ((int)map.get("code") == 202 || (int)map.get("code") == 200){
+//                        // Создать намерение, которое показывает, какую активность вызвать
+//                        // и содержит необходимые параметры
+//                        Intent intent = new Intent(this, NavigationActivity.class);
+//                        // Старт активности без возврата результата
+//                        startActivity(intent);
+//                        finish();
+//                    } else
+//                        this.signOut();
+//                    break;
+                case 1:
                     if ((int)map.get("code") == 202 || (int)map.get("code") == 200){
+
+                        Data_Singleton.getInstance().currentUser = new User((Map<String, Object>) map.get("data"), map.get("token").toString());
+
                         // Создать намерение, которое показывает, какую активность вызвать
                         // и содержит необходимые параметры
                         Intent intent = new Intent(this, NavigationActivity.class);
@@ -223,8 +251,6 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
                         finish();
                     } else
                         this.signOut();
-                    break;
-                case 1:
                     break;
                 default:
                     this.signOut();
@@ -235,6 +261,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
             this.signOut();
             this.GoogleSignInSnackBar("Json (GoogleApi) parser response error.");
         }
+        hideProgressDialog();
     }
 }
 
