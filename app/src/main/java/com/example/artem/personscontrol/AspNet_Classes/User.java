@@ -1,5 +1,8 @@
 package com.example.artem.personscontrol.AspNet_Classes;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -79,5 +82,20 @@ public class User {
         json.put("phoneConfirmed", isPhoneVerify);
         json.put("roleId", roleId);
         return  json;
+    }
+
+    public void save(Context context){
+        saveToSharedPreferences(context, "key", id);
+    }
+
+    private void saveToSharedPreferences(Context context, String key, String value){
+        SharedPreferences sharedPreferences = context.getSharedPreferences(key, 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(key, value);
+        editor.apply();
+    }
+
+    public void loadFromSharedPreferences(){
+
     }
 }
