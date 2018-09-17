@@ -21,6 +21,12 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     String CHANNEL_ID = "percontrol_channel_id";
 
     @Override
+    public void onNewToken(String s) {
+        super.onNewToken(s);
+        Log.d("FirebaseMessaging", "onNewToken: " + s);
+    }
+
+    @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // ...
 

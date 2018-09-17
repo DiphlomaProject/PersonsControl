@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.example.artem.personscontrol.AspNet_Classes.User;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.FirebasePushNotifications.MyFirebaseInstanceIDService;
+import com.example.artem.personscontrol.FirebasePushNotifications.MyFirebaseMessagingService;
 import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -65,6 +67,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
 
         this.setTitle("Welcome");
         activity_login = this;
+
+
+        // register response FCM device Id
+        //new MyFirebaseInstanceIDService().onTokenRefresh();
+        //new MyFirebaseMessagingService();
 
         // Views
         mEmailField = findViewById(R.id.field_email);
