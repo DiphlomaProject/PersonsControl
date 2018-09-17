@@ -132,4 +132,6 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="notification_channel_name" translatable="false">PerControl_Notification</string>
+    <string name="notification_channel_description" translatable="false">PerControl channel for send notifications from Firebase.</string>
 </resources>

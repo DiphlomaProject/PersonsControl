@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.FirebasePushNotifications.MyFirebaseInstanceIDService;
 import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -51,6 +52,9 @@ public class NavigationActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // register response FCM device Id
+        new MyFirebaseInstanceIDService().onTokenRefresh();
 
         // При старте активности получить параметры из намерения
         //Intent intent = getIntent();

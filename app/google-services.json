@@ -47,6 +47,14 @@
           }
         },
         {
+          "client_id": "525481537619-2k2j7fctktnfb60osc3d26h8j502s7le.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.artem.personscontrol",
+            "certificate_hash": "f7c9113f4f9265f06a886b1a6bee458724e1778d"
+          }
+        },
+        {
           "client_id": "525481537619-mah5dq879gfb5cepr696d3fq8eo855cs.apps.googleusercontent.com",
           "client_type": 3
         }
