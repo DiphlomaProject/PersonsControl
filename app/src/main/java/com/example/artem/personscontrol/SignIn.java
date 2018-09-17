@@ -2,6 +2,7 @@ package com.example.artem.personscontrol;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -43,7 +44,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
     private static final int RC_GOOGLE_SIGN_LOGOUT = 8001;
 
     Network_connections network_connections;
-    int networkAction = -1; // 0 - Google SignIn 1 - SignIn
+    int networkAction = Network_connections.VolleyRequestNone; // 0 - SignOut | 1 - SignIn | 2 - Google SignIn
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -121,6 +122,13 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
             //GoogleSignInSnackBar(currentUser);
             showProgressDialog();
             GoogleSignInApi(currentUser);
+        }else if (Data_Singleton.getInstance().currentUser.loadSharedPreferences(this)) {
+            // Создать намерение, которое показывает, какую активность вызвать
+            // и содержит необходимые параметры
+            Intent intent = new Intent(this, NavigationActivity.class);
+            // Старт активности без возврата результата
+            startActivity(intent);
+            finish();
         }
     }
 
@@ -148,7 +156,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
         }
 
         showProgressDialog();
-        networkAction = 1;
+        networkAction = Network_connections.VolleyRequestSignIn;
         network_connections.SignInRequest(this, email, password);
     }
 
@@ -220,11 +228,14 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
                 });
 
         //updateUI(null);
+
+        networkAction = Network_connections.VolleyRequestSignOut;
+        network_connections.SignOutRequest(this);
         hideProgressDialog();
     }
 
     private void GoogleSignInApi(FirebaseUser account){
-        networkAction = 0;
+        networkAction = Network_connections.VolleyRequestGoogleSignIn;
         network_connections.GoogleSignInRequest(this, account.getDisplayName(), account.getEmail(), account.getPhoneNumber());
     }
 
@@ -234,24 +245,19 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
         try {
             Map<String, Object> map = Network_connections.toMap(response);
             switch (networkAction){
-                case 0 :
-
-                    //int e = Log.e("JSONObject to Map", "accept");
-//                    if ((int)map.get("code") == 202 || (int)map.get("code") == 200){
-//                        // Создать намерение, которое показывает, какую активность вызвать
-//                        // и содержит необходимые параметры
-//                        Intent intent = new Intent(this, NavigationActivity.class);
-//                        // Старт активности без возврата результата
-//                        startActivity(intent);
-//                        finish();
-//                    } else
-//                        this.signOut();
-//                    break;
-                case 1:
+                case  Network_connections.VolleyRequestNone:
+                    break;
+                case Network_connections.VolleyRequestSignIn:
+                case Network_connections.VolleyRequestGoogleSignIn:
                     if ((int)map.get("code") == 202 || (int)map.get("code") == 200){
 
                         Data_Singleton.getInstance().currentUser = new User((Map<String, Object>) map.get("data"), map.get("token").toString());
-
+                        if (!Data_Singleton.getInstance().currentUser.isInforationValid()) {
+                            signOut();
+                            break;
+                        }else {
+                            Data_Singleton.getInstance().currentUser.saveSharedPreferences(this);
+                        }
                         // Создать намерение, которое показывает, какую активность вызвать
                         // и содержит необходимые параметры
                         Intent intent = new Intent(this, NavigationActivity.class);
@@ -260,6 +266,8 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
                         finish();
                     } else
                         this.signOut();
+                    break;
+                case  Network_connections.VolleyRequestSignOut:
                     break;
                 default:
                     this.signOut();
@@ -271,6 +279,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
             this.GoogleSignInSnackBar("Json (GoogleApi) parser response error.");
         }
         hideProgressDialog();
+    }
+
+    @Override
+    public void callbackGetImage(Bitmap bitmap) {
+
     }
 }
 

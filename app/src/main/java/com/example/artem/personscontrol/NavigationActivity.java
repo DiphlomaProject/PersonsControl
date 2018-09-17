@@ -1,6 +1,7 @@
 package com.example.artem.personscontrol;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -37,6 +38,10 @@ import java.util.Map;
 public class NavigationActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener, Network_connections.VolleyCallbackNetworkInterface {
 
+    int networkAction = -1; // 0 - Google SignIn | 1 - SignIn | 2 - SignOut
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,9 +57,6 @@ public class NavigationActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        // register response FCM device Id
-        new MyFirebaseInstanceIDService().onTokenRefresh();
 
         // При старте активности получить параметры из намерения
         //Intent intent = getIntent();
@@ -75,7 +77,12 @@ public class NavigationActivity extends BaseActivity
         userEmail = hView.findViewById(R.id.userEmail);
         userName = hView.findViewById(R.id.userName);*/
         Data_Singleton.network_connections.RegisterCallBack(this);
-        Data_Singleton.network_connections.RestApiInfo(this);
+        //Data_Singleton.network_connections.RestApiInfo(this);
+
+    }
+
+    public void getStartInformation(){
+        Data_Singleton.network_connections.GetImagePhoto(this);
     }
 
     @Override
@@ -184,5 +191,10 @@ public class NavigationActivity extends BaseActivity
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public void callbackGetImage(Bitmap bitmap) {
+
     }
 }

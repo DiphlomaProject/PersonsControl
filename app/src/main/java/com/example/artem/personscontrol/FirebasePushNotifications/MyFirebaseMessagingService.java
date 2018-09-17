@@ -11,6 +11,7 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 import com.example.artem.personscontrol.NavigationActivity;
 import com.example.artem.personscontrol.R;
 import com.google.firebase.messaging.FirebaseMessagingService;
@@ -18,12 +19,14 @@ import com.google.firebase.messaging.RemoteMessage;
 
 public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
-    String CHANNEL_ID = "percontrol_channel_id";
+    static String CHANNEL_ID = "percontrol_channel_id";
 
     @Override
-    public void onNewToken(String s) {
-        super.onNewToken(s);
-        Log.d("FirebaseMessaging", "onNewToken: " + s);
+    public void onNewToken(String fcm_token) {
+        super.onNewToken(fcm_token);
+
+        Data_Singleton.deviceFCMToken = fcm_token;
+        Log.d("FirebaseMessaging", "onNewToken: " + Data_Singleton.deviceFCMToken);
     }
 
     @Override

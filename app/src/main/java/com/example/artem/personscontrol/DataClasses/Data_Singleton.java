@@ -7,10 +7,10 @@ public class Data_Singleton {
 
     public static String baseURL;
     public static Network_connections network_connections;
+    public static String deviceFCMToken;
 
     // AspNet Classes with application information
     public User currentUser;
-
 
     private static final Data_Singleton ourInstance = new Data_Singleton();
 
