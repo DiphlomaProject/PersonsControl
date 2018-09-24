@@ -137,6 +137,9 @@ public class NavigationActivity extends BaseActivity
 
         }else if (id == R.id.nav_sign_out){
             showProgressDialog();
+            // configure shared preferences
+            Data_Singleton.getInstance().currentUser.clearSharedPreferences();
+
             // Configure Google Sign In
             GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(getString(R.string.default_web_client_id))

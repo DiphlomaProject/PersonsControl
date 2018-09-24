@@ -1,14 +1,18 @@
 package com.example.artem.personscontrol.FirebasePushNotifications;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.support.v4.app.NotificationCompat;
 import android.util.Log;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
@@ -39,7 +43,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
         // Check if message contains a data payload.
         if (remoteMessage.getData().size() > 0) {
-//            Log.d("MsessageFirebseData", "Message data payload: " + remoteMessage.getData());
+            Log.d("MsessageFirebseData", "Message data payload: " + remoteMessage.getData());
 //
 //            if (/* Check if data needs to be processed by long running job */ true) {
 //                // For long-running tasks (10 seconds or more) use Firebase Job Dispatcher.
@@ -49,46 +53,137 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //                handleNow();
 //            }
 
+            // Загрузка иконок и картинок
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            Bitmap enotik = BitmapFactory.decodeResource(getResources(), R.drawable.ic_menu_send);
+
+            // Создание уведомления
+            Context context = getApplicationContext();
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(this, "notify_001")
+                            .setContentTitle(remoteMessage.getData().get("title"))
+                            .setContentText(remoteMessage.getData().get("message"))
+                            .setSmallIcon(R.drawable.ic_menu_camera)
+                            .setLargeIcon(enotik);
+
+            Notification notification = mBuilder.build();
+
+            // Загрузка пользовательского шаблона уведомления
+            //RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.notify);
+
+            //contentView.setImageViewResource(R.id.image, R.drawable.ic_launcher);
+            //contentView.setTextViewText(R.id.text,"Привет, мир!!!");
+
+            // Установка пользовательского шаблона уведомления
+            //notification.contentView = contentView;
+
+            // Настройка перехода из уведомления в активность
+            Intent notificationIntent = new Intent(this, NavigationActivity.class);
+            PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+            notification.contentIntent = contentIntent;
+
+            // Играть музычку
+            notification.defaults |= Notification.DEFAULT_SOUND;
+
+            // Вибрировать
+            notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+            // Мигать огоньками
+            notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+            // 1 параметр - время до запуска вибрации
+            // 2,3,4 - времена вибраций (может быть много чисел)
+            long[] vibrate = {0,100,200,300};
+            notification.vibrate = vibrate;
+
+            // цвет для RGB индикатора.
+            notification.ledARGB = 0xff00ff00;
+
+            // время между миганиями
+            notification.ledOnMS = 300;
+
+            // время, через которое индикатор потухнет
+            notification.ledOffMS = 1000;
+
+            // включить мигание
+            notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel("notify_001",
+                        "Channel human readable title",
+                        NotificationManager.IMPORTANCE_DEFAULT);
+                notificationManager.createNotificationChannel(channel);
+            }
+
+            notificationManager.notify(1, notification);
+
         }
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {
-//            Log.d("MsessageFirebseBody", "Message Notification Body: " + remoteMessage.getNotification().getBody()
-//                    + " |Label: " + remoteMessage.getNotification().getTitle()
-//                    + " |Color: " + remoteMessage.getNotification().getColor()
-//                    + " |Sound: " + remoteMessage.getNotification().getSound()
-//                    + " |LocalizationTitle: " + remoteMessage.getNotification().getTitleLocalizationKey()
-//                    + " |Icon: " + remoteMessage.getNotification().getIcon());
+            // Загрузка иконок и картинок
+            NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+            Bitmap enotik = BitmapFactory.decodeResource(getResources(), R.drawable.ic_menu_send);
 
-            NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                    .setSmallIcon(R.drawable.common_google_signin_btn_icon_dark)
-                    .setContentTitle(remoteMessage.getNotification().getTitle())
-                    .setContentText(remoteMessage.getNotification().getBody())
-                    .setStyle(new NotificationCompat.BigTextStyle()
-                            .bigText("Much longer text that cannot fit one line..."))
-                    .setPriority(NotificationCompat.PRIORITY_DEFAULT);
-            // Creates an explicit intent for an Activity in your app
-            Intent resultIntent = new Intent(this, NavigationActivity.class);
+            // Создание уведомления
+            Context context = getApplicationContext();
+            NotificationCompat.Builder mBuilder =
+                    new NotificationCompat.Builder(this, "notify_001")
+                            .setContentTitle("Custom уведомление")
+                            .setContentText("Текст уведомления")
+                            .setSmallIcon(R.drawable.ic_menu_camera)
+                            .setLargeIcon(enotik);
 
-            // The stack builder object will contain an artificial back stack for the
-            // started Activity.
-            // This ensures that navigating backward from the Activity leads out of
-            // your application to the Home screen.
-                        TaskStackBuilder stackBuilder = TaskStackBuilder.create(this);
-            // Adds the back stack for the Intent (but not the Intent itself)
-                        stackBuilder.addParentStack(NavigationActivity.class);
-            // Adds the Intent that starts the Activity to the top of the stack
-            stackBuilder.addNextIntent(resultIntent);
-            PendingIntent resultPendingIntent =
-                    stackBuilder.getPendingIntent(
-                            0,
-                            PendingIntent.FLAG_UPDATE_CURRENT
-                    );
-            mBuilder.setContentIntent(resultPendingIntent);
-            NotificationManager mNotificationManager =
-                    (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            // mId allows you to update the notification later on.
-            mNotificationManager.notify(0, mBuilder.build());
+            Notification notification = mBuilder.build();
+
+            // Загрузка пользовательского шаблона уведомления
+            //RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.notify);
+
+            //contentView.setImageViewResource(R.id.image, R.drawable.ic_launcher);
+            //contentView.setTextViewText(R.id.text,"Привет, мир!!!");
+
+            // Установка пользовательского шаблона уведомления
+            //notification.contentView = contentView;
+
+            // Настройка перехода из уведомления в активность
+            Intent notificationIntent = new Intent(this, NavigationActivity.class);
+            PendingIntent contentIntent = PendingIntent.getActivity(this, 0, notificationIntent, 0);
+            notification.contentIntent = contentIntent;
+
+            // Играть музычку
+            notification.defaults |= Notification.DEFAULT_SOUND;
+
+            // Вибрировать
+            notification.defaults |= Notification.DEFAULT_VIBRATE;
+
+            // Мигать огоньками
+            notification.defaults |= Notification.DEFAULT_LIGHTS;
+
+            // 1 параметр - время до запуска вибрации
+            // 2,3,4 - времена вибраций (может быть много чисел)
+            long[] vibrate = {0,100,200,300};
+            notification.vibrate = vibrate;
+
+            // цвет для RGB индикатора.
+            notification.ledARGB = 0xff00ff00;
+
+            // время между миганиями
+            notification.ledOnMS = 300;
+
+            // время, через которое индикатор потухнет
+            notification.ledOffMS = 1000;
+
+            // включить мигание
+            notification.flags |= Notification.FLAG_SHOW_LIGHTS;
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                NotificationChannel channel = new NotificationChannel("notify_001",
+                        "Channel human readable title",
+                        NotificationManager.IMPORTANCE_DEFAULT);
+                notificationManager.createNotificationChannel(channel);
+            }
+
+            notificationManager.notify(1, notification);
         }
 
         // Also if you intend on generating your own notifications as a result of a received FCM

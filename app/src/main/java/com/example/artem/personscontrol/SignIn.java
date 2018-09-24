@@ -34,6 +34,7 @@ import com.google.firebase.messaging.FirebaseMessaging;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.lang.reflect.Array;
 import java.util.Map;
 
 public class SignIn extends BaseActivity implements View.OnClickListener, Network_connections.VolleyCallbackNetworkInterface {
@@ -116,6 +117,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
     @Override
     public void onStart() {
         super.onStart();
+
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null) {
@@ -256,7 +258,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
                             signOut();
                             break;
                         }else {
-                            Data_Singleton.getInstance().currentUser.saveSharedPreferences(this);
+                            Data_Singleton.getInstance().currentUser.saveToSharedPreferences(this);
                         }
                         // Создать намерение, которое показывает, какую активность вызвать
                         // и содержит необходимые параметры

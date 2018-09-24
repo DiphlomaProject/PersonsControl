@@ -26,6 +26,8 @@ public class User {
     public String isPhoneVerify;
     public String roleId;
 
+    private Activity activity;
+
     public User() {
 
     }
@@ -68,7 +70,7 @@ public class User {
         json.put("EmailConfirmed", isEmailVerify);
         json.put("PhoneNumberConfirmed", isPhoneVerify);
         json.put("FCMToken", Data_Singleton.deviceFCMToken);
-        //json.put("Roles", roleId);
+        json.put("Roles", roleId);
         return  json;
     }
 
@@ -86,32 +88,49 @@ public class User {
         json.put("phoneConfirmed", isPhoneVerify);
         json.put("roleId", roleId);
         json.put("FCMToken", Data_Singleton.deviceFCMToken);
+        json.put("Roles", roleId);
         return  json;
     }
 
-    public void saveSharedPreferences(final Activity context){
-        for (String key: jsonUser().keySet()) {
-            if (!key.equals("FCMToken"))
-                saveToSharedPreferences(context, key, jsonAspNetUser().get(key));
-        }
+//    public void saveSharedPreferences(final Activity context){
+//        for (String key: jsonUser().keySet()) {
+//            if (!key.equals("FCMToken")) {
+//                String value = jsonAspNetUser().get(key);
+//                saveToSharedPreferences(context, key, value);
+//            }
+//        }
+//
+//    }
 
-    }
+    public void saveToSharedPreferences(final Activity activity){
+        this.activity = activity;
 
-    private void saveToSharedPreferences(final Activity activity, String key, String value){
         SharedPreferences sharedPreferences = activity.getPreferences(Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putString(key, value);
+        editor.putString("id", id);
+        editor.putString("token", token);
+        editor.putString("displayName", displayName);
+        editor.putString("email", email);
+        editor.putString("phone", phone);
+        editor.putString("country", country);
+        editor.putString("city", city);
+        editor.putString("address", address);
+        editor.putString("emailConfirmed", isEmailVerify);
+        editor.putString("phoneConfirmed", isPhoneVerify);
+        editor.putString("roleId", roleId);
+        editor.putString("FCMToken", Data_Singleton.deviceFCMToken);
+        editor.putString("roleId", roleId);
         editor.apply();
     }
 
     public boolean loadSharedPreferences(final Activity activity){
         loadFromSharedPreferences(activity);
-        if(!token.isEmpty() && !email.isEmpty() && !id.isEmpty())
-            return true;
-        return false;
+        return !token.isEmpty() && !email.isEmpty() && !id.isEmpty();
     }
 
     private void loadFromSharedPreferences(final Activity activity){
+        this.activity = activity;
+
         SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
         String defaultValue = "";
         this.id = sharedPref.getString("id", defaultValue);
@@ -127,9 +146,24 @@ public class User {
     }
 
     public boolean isInforationValid(){
-        if(token != null && email != null && id != null &&
-                !token.isEmpty() && !email.isEmpty() && !id.isEmpty())
-            return true;
-        return false;
+        return token != null && email != null && id != null &&
+                !token.isEmpty() && !email.isEmpty() && !id.isEmpty();
+    }
+
+    public void clearSharedPreferences(){
+        SharedPreferences sharedPreferences = activity.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("id", null);
+        editor.putString("token", null);
+        editor.putString("displayName", null);
+        editor.putString("email", null);
+        editor.putString("phone", null);
+        editor.putString("country", null);
+        editor.putString("city", null);
+        editor.putString("address", null);
+        editor.putString("emailConfirmed", null);
+        editor.putString("phoneConfirmed", null);
+        editor.putString("roleId", null);
+        editor.apply();
     }
 }
