@@ -29,7 +29,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
     public void onNewToken(String fcm_token) {
         super.onNewToken(fcm_token);
 
-        Data_Singleton.deviceFCMToken = fcm_token;
+        Data_Singleton.getInstance().remindFCMToken(fcm_token);
         Log.d("FirebaseMessaging", "onNewToken: " + Data_Singleton.deviceFCMToken);
     }
 

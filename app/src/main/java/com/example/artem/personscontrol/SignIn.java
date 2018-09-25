@@ -62,6 +62,10 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
+
+        Data_Singleton.activity = this;
+        Data_Singleton.getDeviceFCMToken();
+
         FirebaseMessaging.getInstance().subscribeToTopic("all");
 
         network_connections = new Network_connections();
