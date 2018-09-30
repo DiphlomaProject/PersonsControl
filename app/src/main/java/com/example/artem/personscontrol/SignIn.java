@@ -148,9 +148,13 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
             signIn(mEmailField.getText().toString(), mPasswordField.getText().toString());
         }else if (i == R.id.sign_in_button) { //google button
             signIn();
-        }/*else if (i == R.id.verify_email_button) {
-            sendEmailVerification();
-        }else if (i == R.id.reset_password_button){
+        }else if (i == R.id.email_create_account_button) {
+            // Создать намерение, которое показывает, какую активность вызвать
+            // и содержит необходимые параметры
+            Intent intent = new Intent(this, NavigationActivity.class);
+            // Старт активности без возврата результата
+            startActivity(intent);
+        }/*else if (i == R.id.reset_password_button){
             resetPassword();
         }*/
     }

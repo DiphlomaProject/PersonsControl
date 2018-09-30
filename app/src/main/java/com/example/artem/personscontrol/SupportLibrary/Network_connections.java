@@ -3,6 +3,7 @@ package com.example.artem.personscontrol.SupportLibrary;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.support.v4.util.LruCache;
 import android.util.Log;
@@ -23,6 +24,12 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -43,6 +50,8 @@ public class Network_connections {
     public static final int VolleyRequestSignOut = 0;
     public static final int VolleyRequestSignIn = 1;
     public static final int VolleyRequestGoogleSignIn = 2;
+    public static final int VolleyRequestGetUserPhoto = 3;
+    public static final int VolleyRequestRegisterUser = 4;
 
     public Network_connections(){ }
 
@@ -220,26 +229,59 @@ public class Network_connections {
         queue.add(jsonObjectRequest);
     }
 
-    public void GetImagePhoto(final Context context){
+    public void SignUpRequest(final Context context, String email, String passwod, String displayName){
+
         HttpsTrustManager.allowAllSSL();
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-//        String additionalUrl  = "api/Users/getImage";
+        String additionalUrl  = "api/Users/SignUp";
+        Map<String, String> mParams = new HashMap<String, String>();
+        mParams.put("email", email);
+        mParams.put("password", passwod);
+        mParams.put("displayName", displayName);
+        JSONObject parameters = new JSONObject(mParams);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        volleyCallback.callbackRestApiInfo(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
+
+    public void GetImagePhoto(final Context context, String email){
+        HttpsTrustManager.allowAllSSL();
+        if(email == null || email.isEmpty()) return;
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        String additionalUrl  = "api/Users/getUserImg?email=" + email;
 //        Map<String, String> mParams = new HashMap<String, String>();
 //        mParams.put("token", Data_Singleton.getInstance().currentUser.email);
 //        JSONObject parameters = new JSONObject(mParams);
-//
+
 //        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
 //                (Request.Method.GET, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
 //
 //                    @Override
 //                    public void onResponse(JSONObject response) {
-//
 //                        volleyCallback.callbackRestApiInfo(response);
 //                    }
 //                }, new Response.ErrorListener() {
-//                    @SuppressLint("LongLogTag")
+//                    @SuppressLint("GetImagePhoto")
 //                    @Override
 //                    public void onErrorResponse(VolleyError error) {
 //                        // TODO: Handle error
@@ -265,6 +307,19 @@ public class Network_connections {
                         volleyCallback.callbackGetImage(bitmap);
                     }
                 });
+        mImageLoader.get(Data_Singleton.baseURL + additionalUrl, new ImageLoader.ImageListener() {
+            @Override
+            public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
+                volleyCallback.callbackGetImage(response.getBitmap());
+            }
+
+            @SuppressLint("LongLogTag")
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Volley get image error : ", error.toString());
+            }
+        });
+
     }
 
 }

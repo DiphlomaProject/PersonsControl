@@ -2,6 +2,7 @@ package com.example.artem.personscontrol;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
@@ -10,9 +11,13 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.Base64;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
@@ -38,9 +43,11 @@ import java.util.Map;
 public class NavigationActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener, Network_connections.VolleyCallbackNetworkInterface {
 
-    int networkAction = -1; // 0 - Google SignIn | 1 - SignIn | 2 - SignOut
+    int networkAction = Network_connections.VolleyRequestNone; // 0 - Google SignIn | 1 - SignIn | 2 - SignOut
+    Network_connections network_connections;
 
-
+    NavigationView navigationView;
+    View header;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +62,15 @@ public class NavigationActivity extends BaseActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        header = navigationView.getHeaderView(0);
+
+        network_connections = new Network_connections();
+        network_connections.RegisterCallBack(this);
+        getStartInformation();
 
         // При старте активности получить параметры из намерения
         //Intent intent = getIntent();
@@ -76,13 +90,21 @@ public class NavigationActivity extends BaseActivity
 
         userEmail = hView.findViewById(R.id.userEmail);
         userName = hView.findViewById(R.id.userName);*/
-        Data_Singleton.network_connections.RegisterCallBack(this);
+//        Data_Singleton.network_connections.RegisterCallBack(this);
         //Data_Singleton.network_connections.RestApiInfo(this);
 
     }
 
     public void getStartInformation(){
-        Data_Singleton.network_connections.GetImagePhoto(this);
+        networkAction = Network_connections.VolleyRequestGetUserPhoto;
+        network_connections.GetImagePhoto(this, Data_Singleton.getInstance().currentUser.email);
+        Data_Singleton data_singleton = Data_Singleton.getInstance();
+
+        ((TextView)header.findViewById(R.id.userEmail)).setText(Data_Singleton.getInstance().currentUser.email);
+        if (Data_Singleton.getInstance().currentUser.displayName != null && !Data_Singleton.getInstance().currentUser.displayName.isEmpty())
+            ((TextView)header.findViewById(R.id.userName)).setText(Data_Singleton.getInstance().currentUser.displayName);
+        else
+            ((TextView)header.findViewById(R.id.userName)).setText(Data_Singleton.getInstance().currentUser.email);
     }
 
     @Override
@@ -165,20 +187,8 @@ public class NavigationActivity extends BaseActivity
                         }
                     });
 
-            // Создать намерение, которое показывает, какую активность вызвать
-            // и содержит необходимые параметры
-            Intent intent = new Intent(this, SignIn.class);
-
-            // Добавление параметров в намерение
-            //intent.putExtra("test", edit1.getText().toString());
-
-            // Старт активности без возврата результата
-            startActivity(intent);
-
-            // Старт активности с возвратом результата
-            //startActivityForResult(intent, RC_GOOGLE_SIGN_LOGOUT);
-            hideProgressDialog();
-            finish();
+            networkAction = Network_connections.VolleyRequestSignOut;
+            network_connections.SignOutRequest(this);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -188,16 +198,44 @@ public class NavigationActivity extends BaseActivity
 
     @Override
     public void callbackRestApiInfo(JSONObject response) {
-        try {
-            Map<String, Object> map = Network_connections.toMap(response);
-            Log.e("JSONObject to Map", "accept");
-        } catch (JSONException e) {
-            e.printStackTrace();
+        //Map<String, Object> map = Network_connections.toMap(response);
+        //Log.e("JSONObject to Map", "accept");
+        switch(networkAction){
+            case Network_connections.VolleyRequestSignOut:
+                // Создать намерение, которое показывает, какую активность вызвать
+                // и содержит необходимые параметры
+                Intent intent = new Intent(this, SignIn.class);
+
+                // Добавление параметров в намерение
+                //intent.putExtra("test", edit1.getText().toString());
+
+                // Старт активности без возврата результата
+                startActivity(intent);
+
+                // Старт активности с возвратом результата
+                //startActivityForResult(intent, RC_GOOGLE_SIGN_LOGOUT);
+                hideProgressDialog();
+                finish();
+                break;
+            case Network_connections.VolleyRequestGetUserPhoto:
+                networkAction = Network_connections.VolleyRequestNone;
+            break;
+
+                default:
+                    break;
         }
+
     }
 
     @Override
     public void callbackGetImage(Bitmap bitmap) {
+        networkAction = Network_connections.VolleyRequestNone;
+        ((ImageView)header.findViewById(R.id.userImg)).setImageBitmap(bitmap);
 
+        ((TextView)header.findViewById(R.id.userEmail)).setText(Data_Singleton.getInstance().currentUser.email);
+        if (Data_Singleton.getInstance().currentUser.displayName != null && !Data_Singleton.getInstance().currentUser.displayName.isEmpty())
+            ((TextView)header.findViewById(R.id.userName)).setText(Data_Singleton.getInstance().currentUser.displayName);
+        else
+            ((TextView)header.findViewById(R.id.userName)).setText(Data_Singleton.getInstance().currentUser.email);
     }
 }
