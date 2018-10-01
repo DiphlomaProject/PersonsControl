@@ -151,7 +151,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
         }else if (i == R.id.email_create_account_button) {
             // Создать намерение, которое показывает, какую активность вызвать
             // и содержит необходимые параметры
-            Intent intent = new Intent(this, NavigationActivity.class);
+            Intent intent = new Intent(this, SignUp.class);
             // Старт активности без возврата результата
             startActivity(intent);
         }/*else if (i == R.id.reset_password_button){
