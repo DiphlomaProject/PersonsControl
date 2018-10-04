@@ -51,6 +51,7 @@ public class SignUp extends BaseActivity implements  Network_connections.VolleyC
             @Override
             public void onClick(View view) {
                 if (!checkInfo()) return;
+                networkAction = Network_connections.VolleyRequestRegisterUser;
                 network_connections.SignUpRequest(activity, email.getText().toString(), password.getText().toString(), name.getText().toString());
             }
         });
@@ -101,11 +102,14 @@ public class SignUp extends BaseActivity implements  Network_connections.VolleyC
                         // Старт активности без возврата результата
                         startActivity(intent);
                         finish();
+                    } else {
+                        Toast.makeText(this, map.get("message").toString(), Toast.LENGTH_SHORT).show();
                     }
                     break;
                 default:
                     break;
             }//switch
+            networkAction = Network_connections.VolleyRequestNone;
         } catch (JSONException e) {
             e.printStackTrace();
         }
