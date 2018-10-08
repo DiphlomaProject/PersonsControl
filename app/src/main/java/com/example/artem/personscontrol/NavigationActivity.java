@@ -1,5 +1,6 @@
 package com.example.artem.personscontrol;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -144,23 +145,31 @@ public class NavigationActivity extends BaseActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.nav_profile) {
-            // Handle the camera action
+            this.setTitle("My account");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new ProfileFragment()).commit();
         } else if (id == R.id.nav_task_tasks) {
-
+            this.setTitle("My Tasks");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new TasksFragment()).commit();
         } else if (id == R.id.nav_task_groups) {
-
+            this.setTitle("My Tasks Groups");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new TasksGroupsFragment()).commit();
         } else if (id == R.id.nav_task_project) {
-
+            this.setTitle("My Tasks Projects");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new TasksProjectsFragment()).commit();
         } else if (id == R.id.nav_projects) {
-
+            this.setTitle("My Groups");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new GroupsFragment()).commit();
         } else if (id == R.id.nav_groups) {
-
+            this.setTitle("My Projects");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new ProjectsFragment()).commit();
         }else if (id == R.id.nav_about) {
 
         }else if (id == R.id.nav_settings) {
-
+            this.setTitle("Settings");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, new SettingsFragment()).commit();
         }else if (id == R.id.nav_sign_out){
             showProgressDialog();
             // configure shared preferences
