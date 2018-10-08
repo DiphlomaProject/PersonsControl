@@ -14,9 +14,7 @@ import android.view.ViewGroup;
 public class SettingsFragment extends Fragment {
 
 
-    public SettingsFragment() {
-        // Required empty public constructor
-    }
+    public static SettingsFragment sharedInstance() { return new SettingsFragment(); }
 
 
     @Override

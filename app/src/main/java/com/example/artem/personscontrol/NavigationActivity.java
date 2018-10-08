@@ -149,27 +149,27 @@ public class NavigationActivity extends BaseActivity
 
         if (id == R.id.nav_profile) {
             this.setTitle("My account");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new ProfileFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, ProfileFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_tasks) {
             this.setTitle("My Tasks");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new TasksFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, TasksFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_groups) {
             this.setTitle("My Tasks Groups");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new TasksGroupsFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, TasksGroupsFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_project) {
             this.setTitle("My Tasks Projects");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new TasksProjectsFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, TasksProjectsFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_projects) {
-            this.setTitle("My Groups");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new GroupsFragment()).commit();
-        } else if (id == R.id.nav_groups) {
             this.setTitle("My Projects");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new ProjectsFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+        } else if (id == R.id.nav_groups) {
+            this.setTitle("My Groups");
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
         }else if (id == R.id.nav_about) {
 
         }else if (id == R.id.nav_settings) {
             this.setTitle("Settings");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, new SettingsFragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.navigation_container, SettingsFragment.sharedInstance()).commit();
         }else if (id == R.id.nav_sign_out){
             showProgressDialog();
             // configure shared preferences

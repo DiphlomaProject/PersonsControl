@@ -53,6 +53,17 @@ public class Network_connections {
     public static final int VolleyRequestGetUserPhoto = 3;
     public static final int VolleyRequestRegisterUser = 4;
 
+    private static String base_URL  = "https://178.209.88.110:443/";
+    private static String SignIn_URL =  "api/Users/SignIn";
+    private static String GoogleSignIn_URL = "api/Users/GoogleSignIn";
+    private static String HelpInfo_URL = "api/RestApiHelper/helpinfo";
+    private static String SignUp_URL = "api/Users/SignUp";
+    private static String SignOut_URL ="api/Users/SignOut";
+    private static String GetUserImg_URL = "api/Users/getUserImg?email=";
+    private static String GetUserGroups_URL = "api/Groups/GetGroups";
+    private static String GetUserProject_URL = "api/Projects/GetProjects";
+    private static String GetUserTasks_URL = "api/Tasks/GetTasks";
+
     public Network_connections(){ }
 
     public void RegisterCallBack(VolleyCallbackNetworkInterface volleyCallback){
@@ -102,10 +113,10 @@ public class Network_connections {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-        String additionalUrl  = "api/RestApiHelper/HelpInfo";
+        //String additionalUrl  = "api/RestApiHelper/HelpInfo";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl, null, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_URL + HelpInfo_URL, null, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -134,7 +145,7 @@ public class Network_connections {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-        String additionalUrl  = "api/Users/GoogleSignIn";
+        //String additionalUrl  = "api/Users/GoogleSignIn";
         Map<String, String> mParams = new HashMap<String, String>();
         mParams.put("displayName", displayName);
         mParams.put("email", email);
@@ -143,7 +154,7 @@ public class Network_connections {
         JSONObject parameters = new JSONObject(mParams);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_URL + GoogleSignIn_URL,  parameters, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -169,7 +180,7 @@ public class Network_connections {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-        String additionalUrl  = "api/Users/SignIn";
+        //String additionalUrl  = "api/Users/SignIn";
         Map<String, String> mParams = new HashMap<String, String>();
         mParams.put("email", email);
         mParams.put("password", password);
@@ -177,7 +188,7 @@ public class Network_connections {
         JSONObject parameters = new JSONObject(mParams);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_URL + SignIn_URL,  parameters, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -203,14 +214,14 @@ public class Network_connections {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-        String additionalUrl  = "api/Users/SignOut";
+        //String additionalUrl  = "api/Users/SignOut";
         Map<String, String> mParams = new HashMap<String, String>();
         mParams.put("token", Data_Singleton.getInstance().currentUser.token);
         mParams.put("FCMToken", Data_Singleton.deviceFCMToken);
         JSONObject parameters = new JSONObject(mParams);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_URL + SignOut_URL,  parameters, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -235,7 +246,7 @@ public class Network_connections {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-        String additionalUrl  = "api/Users/SignUp";
+        //String additionalUrl  = "api/Users/SignUp";
         Map<String, String> mParams = new HashMap<String, String>();
         mParams.put("email", email);
         mParams.put("password", passwod);
@@ -243,7 +254,7 @@ public class Network_connections {
         JSONObject parameters = new JSONObject(mParams);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
+                (Request.Method.POST, base_URL + SignUp_URL,  parameters, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
@@ -268,29 +279,7 @@ public class Network_connections {
 
         // Instantiate the RequestQueue.
         RequestQueue queue = Volley.newRequestQueue(context);
-        String additionalUrl  = "api/Users/getUserImg?email=" + email;
-//        Map<String, String> mParams = new HashMap<String, String>();
-//        mParams.put("token", Data_Singleton.getInstance().currentUser.email);
-//        JSONObject parameters = new JSONObject(mParams);
-
-//        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-//                (Request.Method.GET, Data_Singleton.baseURL + additionalUrl,  parameters, new Response.Listener<JSONObject>() {
-//
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                        volleyCallback.callbackRestApiInfo(response);
-//                    }
-//                }, new Response.ErrorListener() {
-//                    @SuppressLint("GetImagePhoto")
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        // TODO: Handle error
-//                        ((BaseActivity)context).hideProgressDialog();
-//                    }
-//                });
-//
-//        // Add the request to the RequestQueue.
-//        queue.add(jsonObjectRequest);
+        //String additionalUrl  = "api/Users/getUserImg?email=" + email;
 
         ImageLoader mImageLoader = new ImageLoader(queue,
                 new ImageLoader.ImageCache() {
@@ -307,7 +296,7 @@ public class Network_connections {
                         volleyCallback.callbackGetImage(bitmap);
                     }
                 });
-        mImageLoader.get(Data_Singleton.baseURL + additionalUrl, new ImageLoader.ImageListener() {
+        mImageLoader.get(base_URL + GetUserImg_URL + email, new ImageLoader.ImageListener() {
             @Override
             public void onResponse(ImageLoader.ImageContainer response, boolean isImmediate) {
                 volleyCallback.callbackGetImage(response.getBitmap());
@@ -320,6 +309,104 @@ public class Network_connections {
             }
         });
 
+    }
+
+    // Groups and Projects
+    public void GetUsersGroups(final Context context, String token, String id){
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        //String additionalUrl  = "api/Groups/GetGroups";
+        Map<String, String> mParams = new HashMap<String, String>();
+        mParams.put("token", token);
+        mParams.put("id", id);
+        JSONObject parameters = new JSONObject(mParams);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, base_URL + GetUserGroups_URL,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //volleyCallback.callbackRestApiInfo(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
+
+    public void GetUsersProjects(final Context context, String token, String id){
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        //String additionalUrl  = "api/Groups/GetGroups";
+        Map<String, String> mParams = new HashMap<String, String>();
+        mParams.put("token", token);
+        mParams.put("id", id);
+        JSONObject parameters = new JSONObject(mParams);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, base_URL + GetUserProject_URL,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //volleyCallback.callbackRestApiInfo(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
+
+    // get tasks, this url request will get all tasks for current user (Personal, Groups, Projects)
+    public void GetUsersTasks(final Context context, String token, String id){
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        //String additionalUrl  = "api/Groups/GetGroups";
+        Map<String, String> mParams = new HashMap<String, String>();
+        mParams.put("token", token);
+        mParams.put("id", id);
+        JSONObject parameters = new JSONObject(mParams);
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, base_URL + GetUserTasks_URL,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        //volleyCallback.callbackRestApiInfo(response);
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
     }
 
 }

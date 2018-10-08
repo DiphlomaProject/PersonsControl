@@ -19,9 +19,7 @@ import java.util.regex.Pattern;
 public class ProfileFragment extends Fragment {
 
 
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
+    public static ProfileFragment sharedInstance() { return new ProfileFragment(); }
 
 
     @Override

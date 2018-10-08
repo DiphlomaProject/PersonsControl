@@ -14,9 +14,7 @@ import android.view.ViewGroup;
 public class TasksProjectsFragment extends Fragment {
 
 
-    public TasksProjectsFragment() {
-        // Required empty public constructor
-    }
+    public static TasksProjectsFragment sharedInstance() { return new TasksProjectsFragment(); }
 
 
     @Override
