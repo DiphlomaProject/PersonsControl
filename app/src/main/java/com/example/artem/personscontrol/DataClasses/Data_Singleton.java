@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.example.artem.personscontrol.AspNet_Classes.Customers;
+import com.example.artem.personscontrol.AspNet_Classes.Groups;
+import com.example.artem.personscontrol.AspNet_Classes.Projects;
 import com.example.artem.personscontrol.AspNet_Classes.User;
 import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 
@@ -16,6 +19,9 @@ public class Data_Singleton {
 
     // AspNet Classes with application information
     public User currentUser;
+    public Customers customers;
+    public Groups groups;
+    public Projects projects;
 
     private static final Data_Singleton ourInstance = new Data_Singleton();
 
@@ -37,10 +43,9 @@ public class Data_Singleton {
         editor.apply();
     }
 
-    public static String getDeviceFCMToken() {
+    public static void getDeviceFCMToken() {
         SharedPreferences sharedPref = activity.getPreferences(Context.MODE_PRIVATE);
         String defaultValue = "";
         deviceFCMToken = sharedPref.getString("FCMToken", defaultValue);
-        return deviceFCMToken;
     }
 }

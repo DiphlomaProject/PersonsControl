@@ -145,17 +145,21 @@ public class NavigationActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_profile) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_task_tasks) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_task_groups) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_task_project) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_projects) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_groups) {
+
+        }else if (id == R.id.nav_about) {
+
+        }else if (id == R.id.nav_settings) {
 
         }else if (id == R.id.nav_sign_out){
             showProgressDialog();

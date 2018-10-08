@@ -3,11 +3,13 @@ package com.example.artem.personscontrol;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.opengl.Visibility;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.AspNet_Classes.User;
@@ -50,7 +52,8 @@ public class SignUp extends BaseActivity implements  Network_connections.VolleyC
         signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!checkInfo()) return;
+                if (!checkInfo())
+                    return;
                 networkAction = Network_connections.VolleyRequestRegisterUser;
                 network_connections.SignUpRequest(activity, email.getText().toString(), password.getText().toString(), name.getText().toString());
             }
@@ -58,20 +61,44 @@ public class SignUp extends BaseActivity implements  Network_connections.VolleyC
     }
 
     public boolean checkInfo(){
+        boolean res = true;
+        TextView textView;
+
+        textView = this.findViewById(R.id.textView_name_error);
+        textView.setVisibility(View.INVISIBLE);
+        textView = this.findViewById(R.id.textView_email_error);
+        textView.setVisibility(View.INVISIBLE);
+        textView = this.findViewById(R.id.textView_pass_error);
+        textView.setVisibility(View.INVISIBLE);
+        textView = this.findViewById(R.id.textView_pass_rep_error);
+        textView.setVisibility(View.INVISIBLE);
+
         if (name.getText().toString().isEmpty()){
-            Toast.makeText(this, "Write correctly your name.", Toast.LENGTH_LONG).show();
-            return false;
+            //Toast.makeText(this, "Write correctly your name.", Toast.LENGTH_LONG).show();
+            //return false;
+            textView = this.findViewById(R.id.textView_name_error);
+            textView.setVisibility(View.VISIBLE);
+            res = false;
         }
         if (!isEmailValid(email.getText().toString())){
-            Toast.makeText(this, "Write correctly email.", Toast.LENGTH_LONG).show();
-            return false;
+            //Toast.makeText(this, "Write correctly email.", Toast.LENGTH_LONG).show();
+            //return false;
+            textView = this.findViewById(R.id.textView_email_error);
+            textView.setVisibility(View.VISIBLE);
+            res = false;
         }
-        if ((password.getText().length() < 6 || repeatPassword.getText().length() < 6) || !password.getText().toString().contentEquals(repeatPassword.getText())) {
-            Toast.makeText(this, "Write correctly password and repeat password.", Toast.LENGTH_LONG).show();
-            return false;
+        if ((password.getText().length() < 6 || repeatPassword.getText().length() < 6) ||
+                !password.getText().toString().contentEquals(repeatPassword.getText())) {
+            //Toast.makeText(this, "Write correctly password and repeat password.", Toast.LENGTH_LONG).show();
+            //return false;
+            textView = this.findViewById(R.id.textView_pass_error);
+            textView.setVisibility(View.VISIBLE);
+            textView = this.findViewById(R.id.textView_pass_rep_error);
+            textView.setVisibility(View.VISIBLE);
+            res = false;
         }
 
-        return true;
+        return res;
     }
 
     public static boolean isEmailValid(String email) {
@@ -103,7 +130,10 @@ public class SignUp extends BaseActivity implements  Network_connections.VolleyC
                         startActivity(intent);
                         finish();
                     } else {
-                        Toast.makeText(this, map.get("message").toString(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(this, map.get("message").toString(), Toast.LENGTH_SHORT).show();
+                        TextView textView = this.findViewById(R.id.textView_message_error);
+                        textView.setText(map.get("message").toString());
+                        textView.setVisibility(View.VISIBLE);
                     }
                     break;
                 default:
