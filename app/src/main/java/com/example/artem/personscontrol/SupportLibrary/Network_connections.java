@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.artem.personscontrol.AspNet_Classes.Groups;
 import com.example.artem.personscontrol.BaseActivity;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 import com.example.artem.personscontrol.GroupsFragment;
@@ -338,10 +339,7 @@ public class Network_connections {
 
                     @Override
                     public void onResponse(JSONObject response) {
-                        //volleyCallback.callbackRestApiInfo(response);
-                        Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
-                        Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                                .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                        GroupConverter(response);
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 }, new Response.ErrorListener() {
@@ -423,6 +421,29 @@ public class Network_connections {
 
         // Add the request to the RequestQueue.
         queue.add(jsonObjectRequest);
+    }
+
+    // converters and move to fragments
+
+    private void GroupConverter(JSONObject response){
+        if (response == null) return;
+        try {
+            Map<String, Object> groupMap = toMap(response);
+
+            List<Map<String,Object>> groupsOnly = (List<Map<String, Object>>) groupMap.get("groups");
+
+
+            for(Map<String,Object> oneGroup : groupsOnly)
+                if(Data_Singleton.getInstance().groups.contains(new Groups(oneGroup)) == false)
+                    Data_Singleton.getInstance().groups.add(new Groups(oneGroup));
+
+
+            Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
+            Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                    .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
