@@ -17,6 +17,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1febb8bc-bab4-4fe5-9fd4-1b27a7a9433d" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/GroupTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/UserTasks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
@@ -27,15 +30,10 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/GroupsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/GroupsFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProjectsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProjectsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SettingsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SettingsFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksGroupsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksGroupsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksProjectsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksProjectsFragment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,36 +75,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="NavigationActivity.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
+      <file leaf-file-name="Data_Singleton.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1532">
-              <caret line="252" column="5" selection-start-line="252" selection-start-column="5" selection-end-line="252" selection-end-column="5" />
-              <folding>
-                <element signature="e#2395#2426#0" expanded="true" />
-                <element signature="e#2428#2460#0" expanded="true" />
-                <element signature="e#8185#8204#0" expanded="true" />
-                <element signature="e#8366#8620#0" expanded="true" />
-                <element signature="e#8619#8620#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="214">
+              <caret line="28" column="49" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Network_connections.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java">
+      <file leaf-file-name="GroupTasks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/GroupTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1079">
-              <caret line="396" column="26" selection-start-line="396" selection-start-column="26" selection-end-line="396" selection-end-column="26" />
+            <state relative-caret-position="459">
+              <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GroupsFragment.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/GroupsFragment.java">
+      <file leaf-file-name="ProjectTasks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+            <state relative-caret-position="384">
+              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserTasks.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/UserTasks.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Projects.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="30" selection-start-line="30" selection-end-line="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,11 +123,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TasksGroupsFragment.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksGroupsFragment.java">
+      <file leaf-file-name="Groups.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Groups.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="16" column="89" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
+            <state relative-caret-position="270">
+              <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-201">
+              <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigationActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1905">
+              <caret line="166" column="43" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Network_connections.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="377" column="94" selection-start-line="377" selection-start-column="94" selection-end-line="377" selection-end-column="94" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -3744,9 +3780,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_up.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Groups.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Customers.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_navigation_drawer.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/content_navigation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Profile.java" />
@@ -3760,9 +3793,15 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksGroupsFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksProjectsFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/GroupsFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Customers.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/UserTasks.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/GroupTasks.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java" />
       </list>
     </option>
   </component>
@@ -3822,18 +3861,7 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="personscontrol" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="SupportLibrary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+              <item name="AspNet_Classes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
@@ -4022,14 +4050,13 @@
     <frame x="0" y="23" width="1440" height="826" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32889965" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32889965" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32889965" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.5060423" side_tool="true" weight="0.16237482" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.3297568" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32889965" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32889965" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32831737" />
@@ -4038,16 +4065,17 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="6" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4939577" visible="true" weight="0.16237482" />
-      <window_info anchor="bottom" id="Build" order="7" weight="0.1989026" />
+      <window_info anchor="bottom" id="Build" order="7" visible="true" weight="0.1989026" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3297568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24964234" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.2962963" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
       <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2962963" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="right" id="Assistant" order="4" weight="0.3297568" />
       <window_info anchor="right" id="StringPreview" order="5" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.3297568" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -4102,32 +4130,29 @@
           <properties />
           <option name="timeStamp" value="51" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java</url>
+          <line>377</line>
+          <properties />
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java</url>
+          <line>413</line>
+          <properties />
+          <option name="timeStamp" value="119" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java</url>
+          <line>341</line>
+          <properties />
+          <option name="timeStamp" value="121" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="117" />
+      <option name="time" value="122" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/Volley.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="100" column="31" selection-start-line="100" selection-start-column="31" selection-end-line="100" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/support-compat/27.1.1/fe233277b6eae25ce5b2afab6daf55d73c86f0b9/support-compat-27.1.1-sources.jar!/android/support/v4/util/LruCache.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="99" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/ImageLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="224" selection-start-line="224" selection-end-line="224" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -4189,13 +4214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="2310">
@@ -4224,30 +4242,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/TaskRespon.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Groups.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Customers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2008">
@@ -4277,39 +4271,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="38" column="55" selection-start-line="38" selection-start-column="55" selection-end-line="38" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Profile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
-          <folding>
-            <element signature="e#421#422#0" expanded="true" />
-            <element signature="e#457#458#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml">
-      <provider editor-type-id="text-editor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileViewModel.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Profile.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
       <provider editor-type-id="text-editor">
         <state />
@@ -4330,17 +4294,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="24" column="18" lean-forward="true" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding>
-            <element signature="e#387#420#0" expanded="true" />
-            <element signature="e#445#480#0" expanded="true" />
-            <element signature="e#506#541#0" expanded="true" />
-            <element signature="e#565#598#0" expanded="true" />
-            <element signature="e#1161#1186#0" expanded="true" />
-            <element signature="e#1218#1254#0" expanded="true" />
-            <element signature="e#1520#1556#0" expanded="true" />
-            <element signature="e#1578#1604#0" expanded="true" />
-            <element signature="e#1840#1869#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4424,32 +4377,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <element signature="e#612#613#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml">
-      <provider editor-type-id="text-editor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/BlankFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state />
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_blank.xml" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/BlankFragment.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="318">
           <caret line="26" column="57" lean-forward="true" selection-start-line="26" selection-start-column="57" selection-end-line="26" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4457,9 +4393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4467,9 +4400,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
           <caret line="16" column="83" selection-start-line="16" selection-start-column="83" selection-end-line="16" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4477,9 +4407,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4487,6 +4414,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksGroupsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="16" column="89" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -4495,22 +4429,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1532">
-          <caret line="252" column="5" selection-start-line="252" selection-start-column="5" selection-end-line="252" selection-end-column="5" />
-          <folding>
-            <element signature="e#2395#2426#0" expanded="true" />
-            <element signature="e#2428#2460#0" expanded="true" />
-            <element signature="e#8185#8204#0" expanded="true" />
-            <element signature="e#8366#8620#0" expanded="true" />
-            <element signature="e#8619#8620#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1905">
+          <caret line="166" column="43" selection-start-line="166" selection-start-column="43" selection-end-line="166" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/TasksGroupsFragment.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Customers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="16" column="89" selection-start-line="16" selection-start-column="89" selection-end-line="16" selection-end-column="89" />
+        <state relative-caret-position="300">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/GroupsFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -4519,18 +4453,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1079">
-          <caret line="396" column="26" selection-start-line="396" selection-start-column="26" selection-end-line="396" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/GroupsFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
+        <state>
+          <caret line="377" column="94" selection-start-line="377" selection-start-column="94" selection-end-line="377" selection-end-column="94" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="28" column="49" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/GroupTasks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-201">
+          <caret line="126" column="44" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/UserTasks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Groups.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="true" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
         </state>
       </provider>
     </entry>

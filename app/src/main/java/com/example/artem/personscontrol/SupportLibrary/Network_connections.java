@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
+import android.provider.ContactsContract;
 import android.support.v4.util.LruCache;
 import android.util.Log;
 import android.widget.Toast;
@@ -18,6 +19,9 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.artem.personscontrol.BaseActivity;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.GroupsFragment;
+import com.example.artem.personscontrol.ProjectsFragment;
+import com.example.artem.personscontrol.R;
 import com.example.artem.personscontrol.SignIn;
 
 import org.json.JSONArray;
@@ -52,6 +56,13 @@ public class Network_connections {
     public static final int VolleyRequestGoogleSignIn = 2;
     public static final int VolleyRequestGetUserPhoto = 3;
     public static final int VolleyRequestRegisterUser = 4;
+
+    public static final int VolleyRequestGetGroups = 5;
+    public static final int VolleyRequestGetProjects = 6;
+
+    public static final int VolleyRequestGetTasks = 7;
+    public static final int VolleyRequestGetTasksGroups = 8;
+    public static final int VolleyRequestGetTasksProjects = 9;
 
     private static String base_URL  = "https://178.209.88.110:443/";
     private static String SignIn_URL =  "api/Users/SignIn";
@@ -127,7 +138,6 @@ public class Network_connections {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         Log.e("Volley onErrorResponse : ", error.toString());
                     }
                 });
@@ -164,7 +174,6 @@ public class Network_connections {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         Log.e("Volley GoogleSignInRequest error : ", error.toString());
                         ((SignIn)context).hideProgressDialog();
                     }
@@ -198,7 +207,6 @@ public class Network_connections {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         Log.e("Volley SignInRequest error : ", error.toString());
                         ((BaseActivity)context).hideProgressDialog();
                     }
@@ -231,7 +239,6 @@ public class Network_connections {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 });
@@ -264,7 +271,6 @@ public class Network_connections {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 });
@@ -311,8 +317,11 @@ public class Network_connections {
 
     }
 
+    // Methods without callbacks, they change navigation fragments
+
     // Groups and Projects
     public void GetUsersGroups(final Context context, String token, String id){
+        if(Data_Singleton.getInstance().navigationActivity == null) return;
 
         HttpsTrustManager.allowAllSSL();
 
@@ -330,12 +339,15 @@ public class Network_connections {
                     @Override
                     public void onResponse(JSONObject response) {
                         //volleyCallback.callbackRestApiInfo(response);
+                        Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
+                        Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                                .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                        ((BaseActivity)context).hideProgressDialog();
                     }
                 }, new Response.ErrorListener() {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 });
@@ -345,6 +357,7 @@ public class Network_connections {
     }
 
     public void GetUsersProjects(final Context context, String token, String id){
+        if(Data_Singleton.getInstance().navigationActivity == null) return;
 
         HttpsTrustManager.allowAllSSL();
 
@@ -353,7 +366,7 @@ public class Network_connections {
         //String additionalUrl  = "api/Groups/GetGroups";
         Map<String, String> mParams = new HashMap<String, String>();
         mParams.put("token", token);
-        mParams.put("id", id);
+        mParams.put("userId", id);
         JSONObject parameters = new JSONObject(mParams);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
@@ -362,12 +375,15 @@ public class Network_connections {
                     @Override
                     public void onResponse(JSONObject response) {
                         //volleyCallback.callbackRestApiInfo(response);
+                        Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
+                        Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                                .replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
+                        ((BaseActivity)context).hideProgressDialog();
                     }
                 }, new Response.ErrorListener() {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 });
@@ -378,6 +394,7 @@ public class Network_connections {
 
     // get tasks, this url request will get all tasks for current user (Personal, Groups, Projects)
     public void GetUsersTasks(final Context context, String token, String id){
+        if(Data_Singleton.getInstance().navigationActivity == null) return;
 
         HttpsTrustManager.allowAllSSL();
 
@@ -400,7 +417,6 @@ public class Network_connections {
                     @SuppressLint("LongLogTag")
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 });

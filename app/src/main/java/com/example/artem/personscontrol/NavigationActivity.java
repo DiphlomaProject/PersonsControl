@@ -66,6 +66,7 @@ public class NavigationActivity extends BaseActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        Data_Singleton.getInstance().navigationActivity = this;
 
         header = navigationView.getHeaderView(0);
 
@@ -145,31 +146,34 @@ public class NavigationActivity extends BaseActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-        FragmentManager fragmentManager = getFragmentManager();
 
         if (id == R.id.nav_profile) {
             this.setTitle("My account");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, ProfileFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, ProfileFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_tasks) {
             this.setTitle("My Tasks");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, TasksFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, TasksFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_groups) {
             this.setTitle("My Tasks Groups");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, TasksGroupsFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, TasksGroupsFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_project) {
             this.setTitle("My Tasks Projects");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, TasksProjectsFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, TasksProjectsFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_projects) {
-            this.setTitle("My Projects");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+            //this.setTitle("My Projects");
+            //getFragmentManager().beginTransaction().replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+            this.showProgressDialog();
+            network_connections.GetUsersProjects(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id);
         } else if (id == R.id.nav_groups) {
-            this.setTitle("My Groups");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
+            //this.setTitle("My Groups");
+            //getFragmentManager().beginTransaction().replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
+            this.showProgressDialog();
+            network_connections.GetUsersGroups(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id);
         }else if (id == R.id.nav_about) {
 
         }else if (id == R.id.nav_settings) {
             this.setTitle("Settings");
-            fragmentManager.beginTransaction().replace(R.id.navigation_container, SettingsFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, SettingsFragment.sharedInstance()).commit();
         }else if (id == R.id.nav_sign_out){
             showProgressDialog();
             // configure shared preferences

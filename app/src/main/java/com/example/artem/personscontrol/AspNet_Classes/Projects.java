@@ -28,6 +28,7 @@ public class Projects {
         isComplite = (Boolean) map.get("isComplite");
         beginTime = (String) map.get("beginTime");
         endTime = (String) map.get("untilTime");
+
 //        groupOwners;
 //        groups;
 //        customers;
