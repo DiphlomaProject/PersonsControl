@@ -32,8 +32,10 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.SupportLibrary.Network_connections;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -99,14 +101,18 @@ public class ProfileFragment extends Fragment {
                     return true;
                 }
 
-//                HashMap<String, String> userInfo = new HashMap<>();
-//                userInfo.put("email", email.getText().toString());
-//                userInfo.put("displayName", name.getText().toString());
-//                userInfo.put("phone", phone.getText().toString());
-//                userInfo.put("company", company.getText().toString());
-//                userInfo.put("companyAddress", deliveryAddress.getText().toString());
+                HashMap<String, String> userInfo = new HashMap<>();
+                userInfo.put("id", Data_Singleton.getInstance().currentUser.id);
+                userInfo.put("token", Data_Singleton.getInstance().currentUser.token);
+                userInfo.put("DisplayName", name.getText().toString());
+                userInfo.put("phone", phone.getText().toString());
+                userInfo.put("Address", street.getText().toString());
+                userInfo.put("Country", country.getText().toString());
+                userInfo.put("City", city.getText().toString());
 
-                Toast.makeText(getContext(), "Information saved.", Toast.LENGTH_SHORT).show();
+                ((BaseActivity)getContext()).hideProgressDialog();
+                Network_connections network_connections = new Network_connections();
+                network_connections.UpdateProfile(getContext(), userInfo);
                 return true;
 
             default:

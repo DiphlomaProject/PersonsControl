@@ -98,6 +98,7 @@ public class Network_connections {
     private static String CompleteTaskPersonal_URL = "api/Tasks/UpdateTasksPersonal";
     private static String CompleteTaskGroup_URL = "api/Tasks/UpdateTasksGroup";
     private static String CompleteTaskProject_URL = "api/Tasks/UpdateTasksProject";
+    private static String SendUpdateUserInfo_URL = "api/Users/Update";
 
     public Network_connections(){ }
 
@@ -638,6 +639,34 @@ public class Network_connections {
         JSONObject parameters = new JSONObject(mParams);
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
+
+    public void UpdateProfile(final Context context, Map<String, String> mParams){
+        if(Data_Singleton.getInstance().navigationActivity == null) return;
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+
+        JSONObject parameters = new JSONObject(mParams);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, base_URL + SendUpdateUserInfo_URL,  parameters, new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
