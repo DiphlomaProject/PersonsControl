@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.AspNet_Classes.User;
@@ -233,7 +234,7 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
                 new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(activity_login, R.string.signed_out, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(activity_login, R.string.signed_out, Toast.LENGTH_SHORT).show();
                     }
                 });
 
@@ -274,8 +275,11 @@ public class SignIn extends BaseActivity implements View.OnClickListener, Networ
                         // Старт активности без возврата результата
                         startActivity(intent);
                         finish();
-                    } else
+                    } else {
+                        ((TextView)this.findViewById(R.id.error_message)).setText((String)map.get("message"));
+                        ((TextView)this.findViewById(R.id.error_message)).setVisibility(View.VISIBLE);
                         this.signOut();
+                    }
                     break;
                 case  Network_connections.VolleyRequestSignOut:
                     break;

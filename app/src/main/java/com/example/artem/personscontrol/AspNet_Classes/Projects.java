@@ -1,6 +1,7 @@
 package com.example.artem.personscontrol.AspNet_Classes;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,19 +16,20 @@ public class Projects {
     public boolean isComplite;
     public String beginTime;
     public String endTime;
-    public HashMap<Integer, User> groupOwners;
-    public HashMap<Integer, Groups> groups;
-    public List<Customers> customers;
+    public ArrayList<Groups> groups;
+    public Customers customer;
 
     public  Projects(Map<String, Object> map){
-        id = (int) map.get("userId");
-        customeId = (int) map.get("customer");
-        title = (String) map.get("title");
-        desc = (String) map.get("desc");
-        price = (int) map.get("priceInDollars");
+        groups = new ArrayList();
+
+        id = (int) map.get("Id");
+        customeId = (int) map.get("Customer");
+        title = (String) map.get("Title");
+        desc = (String) map.get("Description");
+        price = (int) map.get("PriceInDollars");
         isComplite = (Boolean) map.get("isComplite");
-        beginTime = (String) map.get("beginTime");
-        endTime = (String) map.get("untilTime");
+        beginTime = (String) map.get("BeginTime");
+        endTime = (String) map.get("UntilTime");
 
 //        groupOwners;
 //        groups;

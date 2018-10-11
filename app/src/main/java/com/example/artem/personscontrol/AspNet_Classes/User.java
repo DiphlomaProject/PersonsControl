@@ -32,6 +32,29 @@ public class User {
 
     }
 
+    public User(Map<String, Object> jsonDict){
+        if (jsonDict.get("Id") != null)
+            id = jsonDict.get("Id").toString();
+        if (jsonDict.get("DisplayName") != null)
+            displayName = jsonDict.get("DisplayName").toString();
+        if (jsonDict.get("Email") != null)
+            email = jsonDict.get("Email").toString();
+        if (jsonDict.get("PhoneNumber") != null)
+            phone = jsonDict.get("PhoneNumber").toString();
+        if (jsonDict.get("Country") != null)
+            country = jsonDict.get("Country").toString();
+        if (jsonDict.get("City") != null)
+            city = jsonDict.get("City").toString();
+        if (jsonDict.get("Address") != null)
+            address = jsonDict.get("Address").toString();
+        if (jsonDict.get("EmailConfirmed") != null)
+            isEmailVerify = jsonDict.get("EmailConfirmed").toString();
+        if (jsonDict.get("PhoneNumberConfirmed") != null)
+            isPhoneVerify = jsonDict.get("PhoneNumberConfirmed").toString();
+        if (jsonDict.get("Roles") != null)
+            roleId = ((Map<String, Object>)((ArrayList) jsonDict.get("Roles")).get(0)).get("RoleId").toString();
+    }
+
     public User(Map<String, Object> jsonDict, String token) {
         if (jsonDict.get("Id") != null)
             id = jsonDict.get("Id").toString();
@@ -53,7 +76,7 @@ public class User {
             isEmailVerify = jsonDict.get("EmailConfirmed").toString();
         if (jsonDict.get("PhoneNumberConfirmed") != null)
             isPhoneVerify = jsonDict.get("PhoneNumberConfirmed").toString();
-        if (jsonDict.get("Roles") != null)
+        if (jsonDict.get("Roles") != null && ((ArrayList) jsonDict.get("Roles")).size() > 0)
             roleId = ((Map<String, Object>)((ArrayList) jsonDict.get("Roles")).get(0)).get("RoleId").toString();
     }
 

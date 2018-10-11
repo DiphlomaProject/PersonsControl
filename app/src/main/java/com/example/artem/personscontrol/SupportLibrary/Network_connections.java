@@ -8,6 +8,7 @@ import android.media.Image;
 import android.provider.ContactsContract;
 import android.support.v4.util.LruCache;
 import android.util.Log;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -17,13 +18,22 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.artem.personscontrol.AspNet_Classes.Customers;
+import com.example.artem.personscontrol.AspNet_Classes.GroupTasks;
 import com.example.artem.personscontrol.AspNet_Classes.Groups;
+import com.example.artem.personscontrol.AspNet_Classes.ProjectTasks;
+import com.example.artem.personscontrol.AspNet_Classes.Projects;
+import com.example.artem.personscontrol.AspNet_Classes.User;
+import com.example.artem.personscontrol.AspNet_Classes.UserTasks;
 import com.example.artem.personscontrol.BaseActivity;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 import com.example.artem.personscontrol.GroupsFragment;
 import com.example.artem.personscontrol.ProjectsFragment;
 import com.example.artem.personscontrol.R;
 import com.example.artem.personscontrol.SignIn;
+import com.example.artem.personscontrol.TasksFragment;
+import com.example.artem.personscontrol.TasksGroupsFragment;
+import com.example.artem.personscontrol.TasksProjectsFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,6 +45,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.security.acl.Group;
+import java.security.acl.Owner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -65,6 +77,14 @@ public class Network_connections {
     public static final int VolleyRequestGetTasksGroups = 8;
     public static final int VolleyRequestGetTasksProjects = 9;
 
+    public static final int RedirectToTasksTasksAfterRequest = 0;
+    public static final int RedirectToProjectsTasksAfterRequest = 1;
+    public static final int RedirectToGroupsTasksAfterRequest = 2;
+
+    public static final int CompleteTaskPersonal_Action = 0;
+    public static final int CompleteTaskGroup_Action = 1;
+    public static final int CompleteTaskProject_Action = 2;
+
     private static String base_URL  = "https://178.209.88.110:443/";
     private static String SignIn_URL =  "api/Users/SignIn";
     private static String GoogleSignIn_URL = "api/Users/GoogleSignIn";
@@ -75,6 +95,9 @@ public class Network_connections {
     private static String GetUserGroups_URL = "api/Groups/GetGroups";
     private static String GetUserProject_URL = "api/Projects/GetProjects";
     private static String GetUserTasks_URL = "api/Tasks/GetTasks";
+    private static String CompleteTaskPersonal_URL = "api/Tasks/UpdateTasksPersonal";
+    private static String CompleteTaskGroup_URL = "api/Tasks/UpdateTasksGroup";
+    private static String CompleteTaskProject_URL = "api/Tasks/UpdateTasksProject";
 
     public Network_connections(){ }
 
@@ -373,9 +396,7 @@ public class Network_connections {
                     @Override
                     public void onResponse(JSONObject response) {
                         //volleyCallback.callbackRestApiInfo(response);
-                        Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
-                        Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                                .replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
+                        ProjectsConverter(response);
                         ((BaseActivity)context).hideProgressDialog();
                     }
                 }, new Response.ErrorListener() {
@@ -391,7 +412,7 @@ public class Network_connections {
     }
 
     // get tasks, this url request will get all tasks for current user (Personal, Groups, Projects)
-    public void GetUsersTasks(final Context context, String token, String id){
+    public void GetUsersTasks(final Context context, String token, String id, final int redirectTo){
         if(Data_Singleton.getInstance().navigationActivity == null) return;
 
         HttpsTrustManager.allowAllSSL();
@@ -401,7 +422,7 @@ public class Network_connections {
         //String additionalUrl  = "api/Groups/GetGroups";
         Map<String, String> mParams = new HashMap<String, String>();
         mParams.put("token", token);
-        mParams.put("id", id);
+        mParams.put("userId", id);
         JSONObject parameters = new JSONObject(mParams);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
@@ -410,6 +431,8 @@ public class Network_connections {
                     @Override
                     public void onResponse(JSONObject response) {
                         //volleyCallback.callbackRestApiInfo(response);
+                        TasksConverter(response, redirectTo);
+                        ((BaseActivity)context).hideProgressDialog();
                     }
                 }, new Response.ErrorListener() {
                     @SuppressLint("LongLogTag")
@@ -424,19 +447,82 @@ public class Network_connections {
     }
 
     // converters and move to fragments
-
     private void GroupConverter(JSONObject response){
         if (response == null) return;
         try {
             Map<String, Object> groupMap = toMap(response);
+            Map<String,Object> groups_model = (Map<String, Object>) groupMap.get("groups_model");
 
-            List<Map<String,Object>> groupsOnly = (List<Map<String, Object>>) groupMap.get("groups");
+            if (groups_model == null  || groups_model.size() <= 0){
+                Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
+                Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                        .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                return;
+            }
 
+            List<Map<String, Object>> groupsOnly = (List<Map<String, Object>>) groups_model.get("groups");
+            List<Map<String, Object>> owners = (List<Map<String, Object>>) groups_model.get("owners");
 
+            Data_Singleton.getInstance().groups = new ArrayList<>();
             for(Map<String,Object> oneGroup : groupsOnly)
-                if(Data_Singleton.getInstance().groups.contains(new Groups(oneGroup)) == false)
-                    Data_Singleton.getInstance().groups.add(new Groups(oneGroup));
+                if (!Data_Singleton.getInstance().groups.contains(new Groups(oneGroup))) {
+                    Groups gr = new Groups(oneGroup);
+                    for (Map<String, Object> owner : owners)
+                        if (gr.ownerId.equals((new User(owner)).id)) {
+                            gr.ownerInfo = new User(owner);
+                            break;
+                        }
+                    Data_Singleton.getInstance().groups.add(gr);
+                }
+            Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
+            Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                    .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
 
+    // converters and move to fragments
+    private void ProjectsConverter(JSONObject response){
+        if (response == null) return;
+        try {
+            Map<String, Object> projectsMap = toMap(response);
+            Map<String,Object> projects_model = (Map<String, Object>) projectsMap.get("data");
+            List<Map<String, Object>> projectsOnly = (List<Map<String, Object>>) projects_model.get("projects");
+
+            if (projectsOnly == null  || projectsOnly.size() <= 0){
+                Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
+                Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                        .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                return;
+            }
+
+            List<Map<String, Object>> customers = (List<Map<String, Object>>) projects_model.get("customers");
+            List<Map<String, Object>> groups = (List<Map<String, Object>>) projects_model.get("groups");
+
+            Data_Singleton.getInstance().projects = new ArrayList<>();
+            for(Map<String,Object> oneProject : projectsOnly)
+                if(!Data_Singleton.getInstance().projects.contains(new Projects(oneProject))) {
+                    Projects pj = new Projects(oneProject);
+
+                    ArrayList<Groups> groupsProj = new ArrayList<>();
+                    for(Map<String, Object> listGroups : groups) {
+                        ArrayList<Map<String, Object>> groupsJson = (ArrayList<Map<String, Object>>)listGroups.get(Integer.toString(pj.id));
+                        if (groupsJson != null)
+                            for(Map<String, Object> group : groupsJson) {
+                                if (!groupsProj.contains(new Groups(group)))
+                                    groupsProj.add(new Groups(group));
+                            }
+                    }
+
+                    for(Map<String, Object> ownersList : customers) {
+                        Map<String, Object> cust = (Map<String, Object>) ownersList.get(Integer.toString(pj.id));
+                        pj.customer = new Customers(cust);
+                    }
+
+                    pj.groups = groupsProj;
+                    Data_Singleton.getInstance().projects.add(pj);
+                }
 
             Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
             Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
@@ -445,6 +531,130 @@ public class Network_connections {
             e.printStackTrace();
         }
     }
+
+    private void TasksConverter(JSONObject response, int redirectTo){
+        if (response == null) return;
+        try {
+            Map<String, Object> projectsMap = toMap(response);
+            Map<String, Object> data = (Map<String, Object> ) projectsMap.get("data");
+
+            if (data != null  || data.size() > 0){
+
+                ArrayList<Map<String, Object>> tasksPerson = (ArrayList<Map<String, Object>>) data.get("tasksPerson");
+                if(tasksPerson != null && tasksPerson.size() > 0){
+                    Data_Singleton.getInstance().userTasks = new ArrayList<>();
+                    for(Map<String, Object> task : tasksPerson)
+                        if(!Data_Singleton.getInstance().userTasks.contains(new UserTasks(task)))
+                            Data_Singleton.getInstance().userTasks.add(new UserTasks(task));
+                }
+
+                ArrayList<Map<String, Object>> tasksGroups = (ArrayList<Map<String, Object>>) data.get("tasksGroups");
+                ArrayList<Map<String, Object>> groups = (ArrayList<Map<String, Object>>) data.get("groups");
+                if(tasksGroups != null && tasksGroups.size() > 0){
+                    Data_Singleton.getInstance().groupTasks = new ArrayList<>();
+                    for(Map<String, Object> task : tasksGroups) {
+                        GroupTasks gTask = new GroupTasks(task);
+                        for (Map<String, Object> group : groups) {
+                            if (new Groups(group).id == gTask.toGroupId)
+                                gTask.group = new Groups(group);
+                        }
+                        if (!Data_Singleton.getInstance().groupTasks.contains(gTask)) {
+                            Data_Singleton.getInstance().groupTasks.add(gTask);
+                        }
+                    }
+                }
+
+
+                ArrayList<Map<String, Object>> tasksProjects = (ArrayList<Map<String, Object>>) data.get("tasksProjects");
+                ArrayList<Map<String, Object>> projects = (ArrayList<Map<String, Object>> ) data.get("projects");
+                if(tasksProjects != null && tasksProjects.size() > 0){
+                    Data_Singleton.getInstance().projectTasks = new ArrayList<>();
+                    for(Map<String, Object> task : tasksProjects) {
+                        ProjectTasks gTask = new ProjectTasks(task);
+                        for (Map<String, Object> project : projects) {
+                            if (new Projects(project).id == gTask.toProjectId)
+                                gTask.project = new Projects(project);
+                        }
+                        if (!Data_Singleton.getInstance().projectTasks.contains(gTask)) {
+                            Data_Singleton.getInstance().projectTasks.add(gTask);
+                        }
+                    }
+                }
+            }
+
+            switch (redirectTo){
+                case RedirectToTasksTasksAfterRequest:
+                    Data_Singleton.getInstance().navigationActivity.setTitle("My Tasks");
+                    Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                            .replace(R.id.navigation_container, TasksFragment.sharedInstance()).commit();
+                    break;
+                case RedirectToGroupsTasksAfterRequest:
+                    Data_Singleton.getInstance().navigationActivity.setTitle("My Groups Tasks");
+                    Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                            .replace(R.id.navigation_container, TasksGroupsFragment.sharedInstance()).commit();
+                    break;
+                case RedirectToProjectsTasksAfterRequest:
+                    Data_Singleton.getInstance().navigationActivity.setTitle("My Projects Tasks");
+                    Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
+                            .replace(R.id.navigation_container, TasksProjectsFragment.sharedInstance()).commit();
+                    break;
+                    default:
+                        break;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Complete Task
+    public void CompleteTask(final Context context, String token, String taskId, Integer completeAction){
+        if(Data_Singleton.getInstance().navigationActivity == null) return;
+
+        HttpsTrustManager.allowAllSSL();
+
+        // Instantiate the RequestQueue.
+        RequestQueue queue = Volley.newRequestQueue(context);
+        //String additionalUrl  = "api/Groups/GetGroups";
+        Map<String, String> mParams = new HashMap<String, String>();
+        String url = base_URL;
+        mParams.put("token", token);
+        mParams.put("taskId", taskId);
+
+        switch (completeAction){
+            case CompleteTaskPersonal_Action:
+                url += CompleteTaskPersonal_URL;
+                break;
+            case CompleteTaskGroup_Action:
+                url += CompleteTaskGroup_URL;
+                break;
+            case CompleteTaskProject_Action:
+                url += CompleteTaskProject_URL;
+                break;
+                default:
+                    return;
+        }
+
+
+        JSONObject parameters = new JSONObject(mParams);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                (Request.Method.POST, url,  parameters, new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                }, new Response.ErrorListener() {
+                    @SuppressLint("LongLogTag")
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        ((BaseActivity)context).hideProgressDialog();
+                    }
+                });
+
+        // Add the request to the RequestQueue.
+        queue.add(jsonObjectRequest);
+    }
+
 
 }
 

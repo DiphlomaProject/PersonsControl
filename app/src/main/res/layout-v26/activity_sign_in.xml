@@ -32,8 +32,8 @@
                 android:id="@+id/title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:text="@string/persones_control"
                 android:textAlignment="center"
                 android:textSize="24sp" />
@@ -42,30 +42,39 @@
                 android:id="@+id/field_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/email"
-                android:inputType="textEmailAddress"
-                android:autofillHints="" />
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/field_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:autofillHints=""
                 android:ems="10"
                 android:hint="@string/password"
-                android:inputType="textPassword"
-                android:autofillHints="" />
+                android:inputType="textPassword" />
+
+            <TextView
+                android:id="@+id/error_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/something_went_wrong"
+                android:textColor="@android:color/holo_red_light"
+                android:visibility="invisible" />
 
             <Button
                 android:id="@+id/email_sign_in_button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/common_google_signin_btn_text_dark_default"
                 android:minWidth="120dp"
                 android:text="@string/sign_in"
@@ -75,8 +84,8 @@
                 android:id="@+id/sign_in_button"
                 android:layout_width="125dp"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:minWidth="125dp"
                 app:buttonSize="standard"
                 app:colorScheme="light" />
@@ -85,8 +94,8 @@
                 android:id="@+id/email_create_account_button"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@color/common_google_signin_btn_text_dark_default"
                 android:minWidth="120dp"
                 android:text="@string/sign_up"

@@ -1,5 +1,7 @@
 package com.example.artem.personscontrol.AspNet_Classes;
 
+import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+
 import java.util.Map;
 
 public class UserTasks {
@@ -25,7 +27,7 @@ public class UserTasks {
         dateTimeEnd = (String) map.get("dateTimeEnd");
         isComplite = (Boolean) map.get("isComplite");
 
-//        userFrom "userFrom";
-//        userTo "userTo";
+        userFrom = new User((Map<String, Object>) map.get("userFrom"));
+        userTo = Data_Singleton.getInstance().currentUser;
     }
 }

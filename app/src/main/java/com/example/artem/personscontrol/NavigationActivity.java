@@ -74,6 +74,10 @@ public class NavigationActivity extends BaseActivity
         network_connections.RegisterCallBack(this);
         getStartInformation();
 
+        this.setTitle("Loading...");
+        this.showProgressDialog();
+        network_connections.GetUsersTasks(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id, Network_connections.RedirectToTasksTasksAfterRequest);
+
         // При старте активности получить параметры из намерения
         //Intent intent = getIntent();
         //int actionInt = intent.getIntExtra("type_of_action_with_user",-1);
@@ -151,17 +155,15 @@ public class NavigationActivity extends BaseActivity
             this.setTitle("My account");
             getFragmentManager().beginTransaction().replace(R.id.navigation_container, ProfileFragment.sharedInstance()).commit();
         } else if (id == R.id.nav_task_tasks) {
-            this.setTitle("My Tasks");
-            getFragmentManager().beginTransaction().replace(R.id.navigation_container, TasksFragment.sharedInstance()).commit();
+            this.showProgressDialog();
+            network_connections.GetUsersTasks(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id, Network_connections.RedirectToTasksTasksAfterRequest);
         } else if (id == R.id.nav_task_groups) {
-            this.setTitle("My Tasks Groups");
-            getFragmentManager().beginTransaction().replace(R.id.navigation_container, TasksGroupsFragment.sharedInstance()).commit();
+            this.showProgressDialog();
+            network_connections.GetUsersTasks(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id, Network_connections.RedirectToGroupsTasksAfterRequest);
         } else if (id == R.id.nav_task_project) {
-            this.setTitle("My Tasks Projects");
-            getFragmentManager().beginTransaction().replace(R.id.navigation_container, TasksProjectsFragment.sharedInstance()).commit();
+            this.showProgressDialog();
+            network_connections.GetUsersTasks(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id, Network_connections.RedirectToProjectsTasksAfterRequest);
         } else if (id == R.id.nav_projects) {
-            //this.setTitle("My Projects");
-            //getFragmentManager().beginTransaction().replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
             this.showProgressDialog();
             network_connections.GetUsersProjects(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id);
         } else if (id == R.id.nav_groups) {
