@@ -20,6 +20,9 @@ import java.util.List;
 
 public class Data_Singleton {
 
+    public static final int RESULT_SET_USER_PHOTO = 1001;
+    public static int RESULT_STORAGE_PERMISSIONS = 1000;
+
     public static Network_connections network_connections;
     public static String deviceFCMToken;
     public static Activity activity;

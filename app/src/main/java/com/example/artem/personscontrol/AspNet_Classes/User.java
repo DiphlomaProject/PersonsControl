@@ -3,6 +3,7 @@ package com.example.artem.personscontrol.AspNet_Classes;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 
@@ -27,6 +28,8 @@ public class User {
     public String roleId;
 
     private Activity activity;
+
+    public Bitmap image;
 
     public User() {
 

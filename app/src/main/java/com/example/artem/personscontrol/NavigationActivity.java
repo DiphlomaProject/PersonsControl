@@ -2,12 +2,15 @@ package com.example.artem.personscontrol;
 
 import android.app.FragmentManager;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
+import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -66,9 +69,11 @@ public class NavigationActivity extends BaseActivity
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         Data_Singleton.getInstance().navigationActivity = this;
 
         header = navigationView.getHeaderView(0);
+        header.setBackgroundResource(R.drawable.background_five_colors);
 
         network_connections = new Network_connections();
         network_connections.RegisterCallBack(this);
@@ -104,7 +109,7 @@ public class NavigationActivity extends BaseActivity
     public void getStartInformation(){
         networkAction = Network_connections.VolleyRequestGetUserPhoto;
         network_connections.GetImagePhoto(this, Data_Singleton.getInstance().currentUser.email);
-        Data_Singleton data_singleton = Data_Singleton.getInstance();
+//        Data_Singleton data_singleton = Data_Singleton.getInstance();
 
         ((TextView)header.findViewById(R.id.userEmail)).setText(Data_Singleton.getInstance().currentUser.email);
         if (Data_Singleton.getInstance().currentUser.displayName != null && !Data_Singleton.getInstance().currentUser.displayName.isEmpty())
@@ -249,7 +254,27 @@ public class NavigationActivity extends BaseActivity
     @Override
     public void callbackGetImage(Bitmap bitmap) {
         networkAction = Network_connections.VolleyRequestNone;
-        ((ImageView)header.findViewById(R.id.userImg)).setImageBitmap(bitmap);
+//        ((ImageView)header.findViewById(R.id.userImg)).setImageBitmap(bitmap);
+        Data_Singleton.getInstance().currentUser.image = bitmap;
+
+        if (bitmap != null) {
+            Bitmap bmp = Data_Singleton.getInstance().currentUser.image;
+            //preferences_singleton.setUserImage(bmp);
+
+            //((ImageView)findViewById(R.id.imageUser)).setImageBitmap(bmp);
+            Resources mResources = getResources();
+            RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(
+                    mResources,
+                    bmp
+            );
+
+            // Set the RoundedBitmapDrawable corners radius
+            roundedBitmapDrawable.setCornerRadius(50.0f);
+            roundedBitmapDrawable.setAntiAlias(true);
+            // Set the ImageView image as drawable object
+            ((ImageView)header.findViewById(R.id.userImg)).setImageDrawable(roundedBitmapDrawable);
+            //((ImageView) view.findViewById(R.id.userImageProfile)).setImageBitmap(preferences_singleton.userBitmapPhoto);
+        }
 
         ((TextView)header.findViewById(R.id.userEmail)).setText(Data_Singleton.getInstance().currentUser.email);
         if (Data_Singleton.getInstance().currentUser.displayName != null && !Data_Singleton.getInstance().currentUser.displayName.isEmpty())
