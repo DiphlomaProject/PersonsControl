@@ -75,16 +75,6 @@ public class Adapter_Projects  extends BaseAdapter implements Filterable {
         deadline.setText(projects.get(position).endTime);
         deadline.setTextColor(Color.WHITE);
 
-//        DateTimeFormatter formatter = null;
-//        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//            formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").withZone(ZoneId.of("UTC"));
-//            Date dt = (Date) formatter.parse(projects.get(position).endTime);
-//
-//            deadline.setText(dt.toString());
-//        }
-
-
-
         try {
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -100,8 +90,6 @@ public class Adapter_Projects  extends BaseAdapter implements Filterable {
                 deadline.setBackgroundColor(Color.GREEN);
                 deadline.setText("\tComplited\t");
             }
-            //String reportDate = dateFormat.format(dt);
-            //deadline.setText(reportDate);
 
         } catch (ParseException e) {
             e.printStackTrace();

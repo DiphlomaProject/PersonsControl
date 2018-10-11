@@ -23,7 +23,7 @@ import java.util.ArrayList;
 public class GroupsFragment extends Fragment {
 
     public Context context;
-    public static GroupsFragment sharedInstance() { return new GroupsFragment(); }
+//    public static GroupsFragment sharedInstance() { return new GroupsFragment(); }
 
     View view;
     GridView gridViewAllGroups;
@@ -50,7 +50,7 @@ public class GroupsFragment extends Fragment {
         if(linesGroups.isEmpty()) return;
 
 
-        adapterGroups = new Adapter_Groups(this.getContext(), linesGroups, sharedInstance());
+        adapterGroups = new Adapter_Groups(this.getContext(), linesGroups, this);
 
         gridViewAllGroups.setAdapter(adapterGroups);
 

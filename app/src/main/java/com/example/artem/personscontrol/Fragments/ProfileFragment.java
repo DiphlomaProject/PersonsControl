@@ -50,7 +50,7 @@ import static android.app.Activity.RESULT_OK;
 public class ProfileFragment extends Fragment {
 
 
-    public static ProfileFragment sharedInstance() { return new ProfileFragment(); }
+//    public static ProfileFragment sharedInstance() { return new ProfileFragment(); }
 
     View view;
     EditText name;
@@ -193,7 +193,7 @@ public class ProfileFragment extends Fragment {
             for(int i : grantResults) // проверяем получили ли мы все нужные разрешения если нет то выйти
                 if(i == -1) {
                     String appName = getContext().getApplicationInfo().loadLabel(getContext().getPackageManager()).toString();
-                    Toast.makeText(sharedInstance().getContext(), "You can allow storage permission in Settings. (Settings -> Apps & notifications -> " + appName + ")", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), "You can allow storage permission in Settings. (Settings -> Apps & notifications -> " + appName + ")", Toast.LENGTH_LONG).show();
                     return;
                 }
 

@@ -16,7 +16,7 @@ import com.example.artem.personscontrol.R;
 public class TasksFragment extends Fragment {
 
 
-    public static TasksFragment sharedInstance() { return new TasksFragment(); }
+//    public static TasksFragment sharedInstance() { return new TasksFragment(); }
 
 
     @Override

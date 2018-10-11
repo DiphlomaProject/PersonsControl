@@ -443,7 +443,7 @@ public class Network_connections {
             if (groups_model == null  || groups_model.size() <= 0){
                 Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
                 Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                        .replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
+                        .replace(R.id.navigation_container, new GroupsFragment()).commit();
                 return;
             }
 
@@ -470,7 +470,7 @@ public class Network_connections {
                 }
             Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
             Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                    .replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
+                    .replace(R.id.navigation_container, new GroupsFragment()).commit();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -487,7 +487,7 @@ public class Network_connections {
             if (projectsOnly == null  || projectsOnly.size() <= 0){
                 Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
                 Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                        .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                        .replace(R.id.navigation_container, new ProjectsFragment()).commit();
                 return;
             }
 
@@ -527,7 +527,7 @@ public class Network_connections {
 
             Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");
             Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                    .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                    .replace(R.id.navigation_container, new ProjectsFragment()).commit();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -587,17 +587,17 @@ public class Network_connections {
                 case RedirectToTasksTasksAfterRequest:
                     Data_Singleton.getInstance().navigationActivity.setTitle("My Tasks");
                     Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                            .replace(R.id.navigation_container, TasksFragment.sharedInstance()).commit();
+                            .replace(R.id.navigation_container, new TasksFragment()).commit();
                     break;
                 case RedirectToGroupsTasksAfterRequest:
                     Data_Singleton.getInstance().navigationActivity.setTitle("My Groups Tasks");
                     Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                            .replace(R.id.navigation_container, TasksGroupsFragment.sharedInstance()).commit();
+                            .replace(R.id.navigation_container, new TasksGroupsFragment()).commit();
                     break;
                 case RedirectToProjectsTasksAfterRequest:
                     Data_Singleton.getInstance().navigationActivity.setTitle("My Projects Tasks");
                     Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                            .replace(R.id.navigation_container, TasksProjectsFragment.sharedInstance()).commit();
+                            .replace(R.id.navigation_container, new TasksProjectsFragment()).commit();
                     break;
                     default:
                         break;

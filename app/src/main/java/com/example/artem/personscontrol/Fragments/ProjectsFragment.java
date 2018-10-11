@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,19 +22,17 @@ import com.example.artem.personscontrol.SignIn;
 
 import java.util.ArrayList;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ProjectsFragment extends Fragment {
 
 
-    public static ProjectsFragment sharedInstance() { return new ProjectsFragment(); }
+    //public static ProjectsFragment sharedInstance() { return new ProjectsFragment(); }
 
     View view;
     GridView gridViewAllGroups;
     Adapter_Projects adapterGroups;
     ArrayList<Projects> linesGroups;
+
+    protected FragmentActivity mActivity;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -55,7 +54,7 @@ public class ProjectsFragment extends Fragment {
         if(linesGroups.isEmpty()) return;
 
 
-        adapterGroups = new Adapter_Projects(this.getContext(), linesGroups, sharedInstance());
+        adapterGroups = new Adapter_Projects(this.getContext(), linesGroups, this);
 
         gridViewAllGroups.setAdapter(adapterGroups);
 
@@ -80,9 +79,11 @@ public class ProjectsFragment extends Fragment {
         templUser.beginTime = group.beginTime;
         templUser.endTime = group.endTime;
 
-        Intent intent = new Intent(getContext(), SignIn.class);
-        //intent.putExtra("project_info", templUser);
-        startActivity(intent);
+        if (getActivity() != null) {
+            Intent intent = new Intent(getActivity(), ProjectInfo.class);
+            intent.putExtra("project_info", templUser);
+            startActivity(intent);
+        }
 
     }
 

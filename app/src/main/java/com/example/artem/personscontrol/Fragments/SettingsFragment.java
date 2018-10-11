@@ -16,7 +16,7 @@ import com.example.artem.personscontrol.R;
 public class SettingsFragment extends Fragment {
 
 
-    public static SettingsFragment sharedInstance() { return new SettingsFragment(); }
+//    public static SettingsFragment sharedInstance() { return new SettingsFragment(); }
 
 
     @Override

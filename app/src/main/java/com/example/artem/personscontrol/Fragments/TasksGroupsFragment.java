@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class TasksGroupsFragment extends Fragment {
 
 
-    public static TasksGroupsFragment sharedInstance() { return new TasksGroupsFragment(); }
+//    public static TasksGroupsFragment sharedInstance() { return new TasksGroupsFragment(); }
 
     View view;
 //    GridView gridViewAllGroups;

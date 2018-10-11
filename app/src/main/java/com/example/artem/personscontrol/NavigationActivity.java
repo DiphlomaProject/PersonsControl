@@ -149,7 +149,7 @@ public class NavigationActivity extends BaseActivity
 
         if (id == R.id.nav_profile) {
             this.setTitle("My account");
-            getFragmentManager().beginTransaction().replace(R.id.navigation_container, ProfileFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, new ProfileFragment()).commit();
         } else if (id == R.id.nav_task_tasks) {
             this.showProgressDialog();
             network_connections.GetUsersTasks(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id, Network_connections.RedirectToTasksTasksAfterRequest);
@@ -171,7 +171,7 @@ public class NavigationActivity extends BaseActivity
 
         }else if (id == R.id.nav_settings) {
             this.setTitle("Settings");
-            getFragmentManager().beginTransaction().replace(R.id.navigation_container, SettingsFragment.sharedInstance()).commit();
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, new SettingsFragment()).commit();
         }else if (id == R.id.nav_sign_out){
             showProgressDialog();
             // configure shared preferences
