@@ -1,12 +1,13 @@
 package com.example.artem.personscontrol.AspNet_Classes;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Projects {
+public class Projects implements Serializable {
 
     public int id;
     public int customeId;
@@ -18,6 +19,10 @@ public class Projects {
     public String endTime;
     public ArrayList<Groups> groups;
     public Customers customer;
+
+    public Projects(){
+
+    }
 
     public  Projects(Map<String, Object> map){
         groups = new ArrayList();

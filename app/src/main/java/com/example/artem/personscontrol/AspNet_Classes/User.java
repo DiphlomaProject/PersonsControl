@@ -7,13 +7,14 @@ import android.graphics.Bitmap;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 
+import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class User {
+public class User implements Serializable {
 
     public String id;
     public String token;

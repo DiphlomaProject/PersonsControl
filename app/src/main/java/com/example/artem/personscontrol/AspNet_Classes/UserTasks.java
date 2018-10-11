@@ -2,9 +2,10 @@ package com.example.artem.personscontrol.AspNet_Classes;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class UserTasks {
+public class UserTasks implements Serializable {
 
     public int id;
     public String title;

@@ -3,13 +3,8 @@ package com.example.artem.personscontrol.SupportLibrary;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.media.Image;
-import android.provider.ContactsContract;
 import android.support.v4.util.LruCache;
 import android.util.Log;
-import android.widget.Switch;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -27,32 +22,23 @@ import com.example.artem.personscontrol.AspNet_Classes.User;
 import com.example.artem.personscontrol.AspNet_Classes.UserTasks;
 import com.example.artem.personscontrol.BaseActivity;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
-import com.example.artem.personscontrol.GroupsFragment;
-import com.example.artem.personscontrol.ProjectsFragment;
+import com.example.artem.personscontrol.Fragments.GroupsFragment;
+import com.example.artem.personscontrol.Fragments.ProjectsFragment;
 import com.example.artem.personscontrol.R;
 import com.example.artem.personscontrol.SignIn;
-import com.example.artem.personscontrol.TasksFragment;
-import com.example.artem.personscontrol.TasksGroupsFragment;
-import com.example.artem.personscontrol.TasksProjectsFragment;
+import com.example.artem.personscontrol.Fragments.TasksFragment;
+import com.example.artem.personscontrol.Fragments.TasksGroupsFragment;
+import com.example.artem.personscontrol.Fragments.TasksProjectsFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.security.acl.Group;
-import java.security.acl.Owner;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 public class Network_connections {
 
@@ -457,7 +443,7 @@ public class Network_connections {
             if (groups_model == null  || groups_model.size() <= 0){
                 Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
                 Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                        .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                        .replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
                 return;
             }
 
@@ -468,16 +454,23 @@ public class Network_connections {
             for(Map<String,Object> oneGroup : groupsOnly)
                 if (!Data_Singleton.getInstance().groups.contains(new Groups(oneGroup))) {
                     Groups gr = new Groups(oneGroup);
-                    for (Map<String, Object> owner : owners)
+                    for (Map<String, Object> owner : owners){
                         if (gr.ownerId.equals((new User(owner)).id)) {
                             gr.ownerInfo = new User(owner);
                             break;
                         }
-                    Data_Singleton.getInstance().groups.add(gr);
+                    }
+
+                    Boolean isContains = false;
+                    for(Groups group :  Data_Singleton.getInstance().groups)
+                        if(group.id == gr.id)
+                            isContains = true;
+                    if(!isContains)
+                        Data_Singleton.getInstance().groups.add(gr);
                 }
             Data_Singleton.getInstance().navigationActivity.setTitle("My Groups");
             Data_Singleton.getInstance().navigationActivity.getFragmentManager().beginTransaction()
-                    .replace(R.id.navigation_container, ProjectsFragment.sharedInstance()).commit();
+                    .replace(R.id.navigation_container, GroupsFragment.sharedInstance()).commit();
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -522,7 +515,14 @@ public class Network_connections {
                     }
 
                     pj.groups = groupsProj;
-                    Data_Singleton.getInstance().projects.add(pj);
+
+
+                    Boolean isContains = false;
+                    for(Projects projects :  Data_Singleton.getInstance().projects)
+                        if(projects.id == pj.id)
+                            isContains = true;
+                    if(!isContains)
+                        Data_Singleton.getInstance().projects.add(pj);
                 }
 
             Data_Singleton.getInstance().navigationActivity.setTitle("My Projects");

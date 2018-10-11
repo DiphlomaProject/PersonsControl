@@ -1,8 +1,9 @@
 package com.example.artem.personscontrol.AspNet_Classes;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class Customers {
+public class Customers implements Serializable {
 
     public int id;
     public String company;

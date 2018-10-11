@@ -43,7 +43,8 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".SignUp"></activity>
+        <activity android:name=".SignUp" />
+        <activity android:name=".Activities.ProjectInfo"></activity>
     </application>
 
 </manifest>

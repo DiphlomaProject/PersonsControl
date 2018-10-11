@@ -1,8 +1,9 @@
 package com.example.artem.personscontrol.AspNet_Classes;
 
+import java.io.Serializable;
 import java.util.Map;
 
-public class ProjectTasks {
+public class ProjectTasks implements Serializable {
 
     public int id;
     public String title;
