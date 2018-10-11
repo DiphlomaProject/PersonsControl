@@ -17,30 +17,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1febb8bc-bab4-4fe5-9fd4-1b27a7a9433d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.6/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_user_profile.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/GroupTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/GroupTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Groups.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Groups.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/Projects.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/UserTasks.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/UserTasks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_in.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -82,102 +60,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Network_connections.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3819">
-              <caret line="366" column="21" selection-start-line="366" selection-start-column="21" selection-end-line="366" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3873#3889#0" expanded="true" />
-                <element signature="e#4481#4489#0" expanded="true" />
-                <element signature="e#6074#6318#0" expanded="true" />
-                <element signature="e#6317#6318#0" expanded="true" />
-                <element signature="e#6320#6616#0" expanded="true" />
-                <element signature="e#6615#6616#0" expanded="true" />
-                <element signature="e#6460#6476#0" expanded="true" />
-                <element signature="e#7633#7877#0" expanded="true" />
-                <element signature="e#7876#7877#0" expanded="true" />
-                <element signature="e#7879#8248#0" expanded="true" />
-                <element signature="e#8247#8248#0" expanded="true" />
-                <element signature="e#7919#7935#0" expanded="true" />
-                <element signature="e#9043#9287#0" expanded="true" />
-                <element signature="e#9286#9287#0" expanded="true" />
-                <element signature="e#9289#9658#0" expanded="true" />
-                <element signature="e#9657#9658#0" expanded="true" />
-                <element signature="e#9300#9316#0" expanded="true" />
-                <element signature="e#10423#10667#0" expanded="true" />
-                <element signature="e#10666#10667#0" expanded="true" />
-                <element signature="e#10669#10956#0" expanded="true" />
-                <element signature="e#10955#10956#0" expanded="true" />
-                <element signature="e#10646#10662#0" expanded="true" />
-                <element signature="e#11754#11998#0" expanded="true" />
-                <element signature="e#11997#11998#0" expanded="true" />
-                <element signature="e#12000#12287#0" expanded="true" />
-                <element signature="e#12286#12287#0" expanded="true" />
-                <element signature="e#12176#12192#0" expanded="true" />
-                <element signature="e#13640#13656#0" expanded="true" />
-                <element signature="e#14695#14989#0" expanded="true" />
-                <element signature="e#14991#15278#0" expanded="true" />
-                <element signature="e#15277#15278#0" expanded="true" />
-                <element signature="e#15026#15042#0" expanded="true" />
-                <element signature="e#16086#16455#0" expanded="true" />
-                <element signature="e#16454#16455#0" expanded="true" />
-                <element signature="e#16457#16744#0" expanded="true" />
-                <element signature="e#16743#16744#0" expanded="true" />
-                <element signature="e#16611#16627#0" expanded="true" />
-                <element signature="e#17669#18047#0" expanded="true" />
-                <element signature="e#18046#18047#0" expanded="true" />
-                <element signature="e#18049#18336#0" expanded="true" />
-                <element signature="e#18335#18336#0" expanded="true" />
-                <element signature="e#27741#27757#0" expanded="true" />
-                <element signature="e#28036#28330#0" expanded="true" />
-                <element signature="e#28329#28330#0" expanded="true" />
-                <element signature="e#28332#28619#0" expanded="true" />
-                <element signature="e#28618#28619#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="nav_header_navigation.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml">
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-              <folding>
-                <element signature="e#387#420#0" expanded="true" />
-                <element signature="e#445#480#0" expanded="true" />
-                <element signature="e#506#541#0" expanded="true" />
-                <element signature="e#565#598#0" expanded="true" />
-                <element signature="e#1167#1192#0" expanded="true" />
-                <element signature="e#1224#1260#0" expanded="true" />
-                <element signature="e#1520#1556#0" expanded="true" />
-                <element signature="e#1578#1604#0" expanded="true" />
-                <element signature="e#1840#1869#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SignIn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="303" selection-start-line="303" selection-end-line="303" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Data_Singleton.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+            <state relative-caret-position="158">
+              <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigationActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="255" column="56" lean-forward="true" selection-start-line="255" selection-start-column="56" selection-end-line="255" selection-end-column="56" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="menu_user_profile.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_user_profile.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
           </provider>
         </entry>
       </file>
@@ -188,12 +106,12 @@
       <list>
         <option value="Singleton" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>services</find>
       <find>FirebaseInstanceID</find>
       <find>createNotificationChannel</find>
       <find>volleyCallback</find>
@@ -223,6 +141,7 @@
       <find>write_correctly_password_and_repeat</find>
       <find>sign_ou</find>
       <find>base</find>
+      <find>image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -3821,11 +3740,13 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/ProjectTasks.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/menu/menu_user_profile.xml" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="6" />
+    <option name="y" value="64" />
     <option name="width" value="1440" />
     <option name="height" value="826" />
   </component>
@@ -3880,7 +3801,24 @@
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="personscontrol" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="AspNet_Classes" type="462c0819:PsiDirectoryNode" />
+              <item name="DataClasses" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="drawable" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="menu" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
@@ -4083,7 +4021,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="826" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32889965" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.5064378" weight="0.32647464" />
@@ -4092,7 +4029,7 @@
       <window_info id="Build Variants" order="6" sideWeight="0.48458904" side_tool="true" weight="0.17095852" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Preview" order="4" visible="true" weight="0.3297568" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32889965" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32784638" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32784638" />
@@ -4100,8 +4037,8 @@
       <window_info id="Captures" order="3" weight="0.25" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="5" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.51541096" visible="true" weight="0.17095852" />
-      <window_info active="true" anchor="bottom" id="Build" order="12" visible="true" weight="0.1989026" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.51541096" visible="true" weight="0.17095852" />
+      <window_info anchor="bottom" id="Build" order="12" visible="true" weight="0.1989026" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3297568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24964234" />
@@ -4196,16 +4133,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Volley_by_Google/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Volley_by_Google/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-48">
@@ -4277,14 +4204,6 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileViewModel.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Profile.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/profile_fragment.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
-      <provider editor-type-id="text-editor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/content_navigation.xml">
       <provider editor-type-id="text-editor">
         <state />
@@ -4426,8 +4345,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/AspNet_Classes/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1251">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="274">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
@@ -4475,28 +4394,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="78" column="195" selection-start-line="78" selection-start-column="195" selection-end-line="78" selection-end-column="195" />
-          <folding>
-            <element signature="e#2395#2426#0" expanded="true" />
-            <element signature="e#2428#2460#0" expanded="true" />
-            <element signature="e#8957#8976#0" expanded="true" />
-            <element signature="e#9138#9392#0" expanded="true" />
-            <element signature="e#9391#9392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-27/android.jar!/java/util/ArrayList.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
-          <folding>
-            <element signature="e#1037#1038#0" expanded="true" />
-            <element signature="e#1088#1089#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4504,9 +4405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding>
-            <element signature="e#612#613#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4543,8 +4441,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/DataClasses/Data_Singleton.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
+        <state relative-caret-position="158">
+          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -4606,22 +4504,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
+        <state relative-caret-position="300">
           <caret line="20" column="48" selection-start-line="20" selection-start-column="48" selection-end-line="20" selection-end-column="48" />
-          <folding>
-            <element signature="e#387#420#0" expanded="true" />
-            <element signature="e#445#480#0" expanded="true" />
-            <element signature="e#506#541#0" expanded="true" />
-            <element signature="e#565#598#0" expanded="true" />
-            <element signature="e#1167#1192#0" expanded="true" />
-            <element signature="e#1224#1260#0" expanded="true" />
-            <element signature="e#1520#1556#0" expanded="true" />
-            <element signature="e#1578#1604#0" expanded="true" />
-            <element signature="e#1840#1869#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="255" column="56" lean-forward="true" selection-start-line="255" selection-start-column="56" selection-end-line="255" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/menu_user_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
