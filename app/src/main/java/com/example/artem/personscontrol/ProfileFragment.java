@@ -97,7 +97,8 @@ public class ProfileFragment extends Fragment {
                 boolean isPhone =  isValidPhoneNumber(phone.getText().toString());
                 if(name.getText().length() <= 0 || !isPhone || email.getText().length() <= 0 || city.getText().length() <= 0
                         || street.getText().length() <= 0 || country.getText().length() <= 0){
-                    Toast.makeText(getContext(), "The first you must fill all fields.", Toast.LENGTH_SHORT).show();
+                    if(isPhone)
+                        Toast.makeText(getContext(), "The first you must fill all fields.", Toast.LENGTH_SHORT).show();
                     return true;
                 }
 
@@ -110,7 +111,7 @@ public class ProfileFragment extends Fragment {
                 userInfo.put("Country", country.getText().toString());
                 userInfo.put("City", city.getText().toString());
 
-                ((BaseActivity)getContext()).hideProgressDialog();
+                ((BaseActivity)getContext()).showProgressDialog();
                 Network_connections network_connections = new Network_connections();
                 network_connections.UpdateProfile(getContext(), userInfo);
                 return true;

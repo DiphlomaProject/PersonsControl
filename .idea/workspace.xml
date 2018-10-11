@@ -16,7 +16,12 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1febb8bc-bab4-4fe5-9fd4-1b27a7a9433d" name="Default" comment="" />
+    <list default="true" id="1febb8bc-bab4-4fe5-9fd4-1b27a7a9433d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonsControl_Andorid.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonsControl_Andorid.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,64 +62,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Network_connections.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Network_connections.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
               <caret line="672" selection-start-line="672" selection-end-line="672" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4704#4720#0" expanded="true" />
-                <element signature="e#5312#5320#0" expanded="true" />
-                <element signature="e#6145#6389#0" expanded="true" />
-                <element signature="e#6388#6389#0" expanded="true" />
-                <element signature="e#6391#6687#0" expanded="true" />
-                <element signature="e#6686#6687#0" expanded="true" />
-                <element signature="e#7291#7307#0" expanded="true" />
-                <element signature="e#7704#7948#0" expanded="true" />
-                <element signature="e#7947#7948#0" expanded="true" />
-                <element signature="e#7950#8319#0" expanded="true" />
-                <element signature="e#8318#8319#0" expanded="true" />
-                <element signature="e#8750#8766#0" expanded="true" />
-                <element signature="e#9114#9358#0" expanded="true" />
-                <element signature="e#9357#9358#0" expanded="true" />
-                <element signature="e#9360#9729#0" expanded="true" />
-                <element signature="e#9728#9729#0" expanded="true" />
-                <element signature="e#10131#10147#0" expanded="true" />
-                <element signature="e#10494#10738#0" expanded="true" />
-                <element signature="e#10737#10738#0" expanded="true" />
-                <element signature="e#10740#11027#0" expanded="true" />
-                <element signature="e#11026#11027#0" expanded="true" />
-                <element signature="e#11477#11493#0" expanded="true" />
-                <element signature="e#11825#12069#0" expanded="true" />
-                <element signature="e#12068#12069#0" expanded="true" />
-                <element signature="e#12071#12358#0" expanded="true" />
-                <element signature="e#12357#12358#0" expanded="true" />
-                <element signature="e#13007#13023#0" expanded="true" />
-                <element signature="e#14471#14487#0" expanded="true" />
-                <element signature="e#14766#15060#0" expanded="true" />
-                <element signature="e#15059#15060#0" expanded="true" />
-                <element signature="e#15062#15349#0" expanded="true" />
-                <element signature="e#15348#15349#0" expanded="true" />
-                <element signature="e#15857#15873#0" expanded="true" />
-                <element signature="e#16157#16526#0" expanded="true" />
-                <element signature="e#16525#16526#0" expanded="true" />
-                <element signature="e#16528#16815#0" expanded="true" />
-                <element signature="e#16814#16815#0" expanded="true" />
-                <element signature="e#17442#17458#0" expanded="true" />
-                <element signature="e#17740#18118#0" expanded="true" />
-                <element signature="e#18117#18118#0" expanded="true" />
-                <element signature="e#18120#18407#0" expanded="true" />
-                <element signature="e#18406#18407#0" expanded="true" />
-                <element signature="e#27811#27827#0" expanded="true" />
-                <element signature="e#28564#28808#0" expanded="true" />
-                <element signature="e#28807#28808#0" expanded="true" />
-                <element signature="e#28810#29097#0" expanded="true" />
-                <element signature="e#29096#29097#0" expanded="true" />
-                <element signature="e#29711#29955#0" expanded="true" />
-                <element signature="e#29954#29955#0" expanded="true" />
-                <element signature="e#29957#30244#0" expanded="true" />
-                <element signature="e#30243#30244#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -123,17 +77,17 @@
       <file leaf-file-name="NavigationActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
+            <state relative-caret-position="1950">
               <caret line="172" column="32" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProfileFragment.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProfileFragment.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="113" selection-start-line="113" selection-end-line="113" />
+            <state relative-caret-position="393">
+              <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -141,7 +95,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
+            <state relative-caret-position="2355">
               <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
             </state>
           </provider>
@@ -150,16 +104,8 @@
       <file leaf-file-name="fragment_profile.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
+            <state relative-caret-position="1350">
               <caret line="90" column="33" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
-              <folding>
-                <element signature="e#3767#3785#0" expanded="true" />
-                <element signature="e#4885#4900#0" expanded="true" />
-                <element signature="e#6011#6026#0" expanded="true" />
-                <element signature="e#7207#7221#0" expanded="true" />
-                <element signature="e#8342#8358#0" expanded="true" />
-                <element signature="e#9520#9537#0" expanded="true" />
-              </folding>
             </state>
           </provider>
           <provider editor-type-id="android-designer2">
@@ -3813,9 +3759,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="6" />
-    <option name="y" value="64" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="826" />
   </component>
@@ -3824,6 +3769,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -3846,58 +3804,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="personscontrol" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="personscontrol" type="cbb59c9e:AndroidPsiDirectoryNode" />
-              <item name="SupportLibrary" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -4090,15 +3996,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="826" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32889965" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32889965" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.5064378" weight="0.32647464" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="6" sideWeight="0.48458904" side_tool="true" weight="0.17095852" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="right" id="Preview" order="4" weight="0.3297568" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32889965" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32784638" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32784638" />
@@ -4108,7 +4014,6 @@
       <window_info id="Designer" order="5" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.51541096" visible="true" weight="0.17095852" />
       <window_info anchor="bottom" id="Build" order="12" weight="0.1989026" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
       <window_info anchor="right" id="Gradle" order="3" weight="0.3297568" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24964234" />
       <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
@@ -4116,13 +4021,15 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2962963" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="right" id="Assistant" order="4" weight="0.3297568" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="StringPreview" order="5" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Preview" order="4" weight="0.3297568" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32969698" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="StringPreview" order="10" />
@@ -4196,18 +4103,6 @@
           <line>122</line>
           <properties />
           <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java</url>
-          <line>113</line>
-          <properties />
-          <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java</url>
-          <line>672</line>
-          <properties />
-          <option name="timeStamp" value="179" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="180" />
@@ -4465,23 +4360,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Preferences_Singleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="37" column="11" selection-start-line="37" selection-start-column="11" selection-end-line="37" selection-end-column="11" />
-          <folding>
-            <element signature="e#1019#1020#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Preferences_Singleton.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="737">
@@ -4508,16 +4390,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
+        <state relative-caret-position="1350">
           <caret line="90" column="33" selection-start-line="90" selection-start-column="33" selection-end-line="90" selection-end-column="33" />
-          <folding>
-            <element signature="e#3767#3785#0" expanded="true" />
-            <element signature="e#4885#4900#0" expanded="true" />
-            <element signature="e#6011#6026#0" expanded="true" />
-            <element signature="e#7207#7221#0" expanded="true" />
-            <element signature="e#8342#8358#0" expanded="true" />
-            <element signature="e#9520#9537#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4526,7 +4400,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
+        <state relative-caret-position="2355">
           <caret line="157" column="45" selection-start-line="157" selection-start-column="45" selection-end-line="157" selection-end-column="45" />
         </state>
       </provider>
@@ -4556,17 +4430,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding>
-            <element signature="e#380#413#0" expanded="true" />
-            <element signature="e#438#473#0" expanded="true" />
-            <element signature="e#499#534#0" expanded="true" />
-            <element signature="e#558#591#0" expanded="true" />
-            <element signature="e#1155#1180#0" expanded="true" />
-            <element signature="e#1212#1248#0" expanded="true" />
-            <element signature="e#1508#1544#0" expanded="true" />
-            <element signature="e#1566#1592#0" expanded="true" />
-            <element signature="e#1828#1857#0" expanded="true" />
-          </folding>
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -4575,15 +4438,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/NavigationActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
+        <state relative-caret-position="1950">
           <caret line="172" column="32" selection-start-line="172" selection-start-column="32" selection-end-line="172" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="113" selection-start-line="113" selection-end-line="113" />
         </state>
       </provider>
     </entry>
@@ -4593,58 +4449,14 @@
           <caret line="672" selection-start-line="672" selection-end-line="672" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4704#4720#0" expanded="true" />
-            <element signature="e#5312#5320#0" expanded="true" />
-            <element signature="e#6145#6389#0" expanded="true" />
-            <element signature="e#6388#6389#0" expanded="true" />
-            <element signature="e#6391#6687#0" expanded="true" />
-            <element signature="e#6686#6687#0" expanded="true" />
-            <element signature="e#7291#7307#0" expanded="true" />
-            <element signature="e#7704#7948#0" expanded="true" />
-            <element signature="e#7947#7948#0" expanded="true" />
-            <element signature="e#7950#8319#0" expanded="true" />
-            <element signature="e#8318#8319#0" expanded="true" />
-            <element signature="e#8750#8766#0" expanded="true" />
-            <element signature="e#9114#9358#0" expanded="true" />
-            <element signature="e#9357#9358#0" expanded="true" />
-            <element signature="e#9360#9729#0" expanded="true" />
-            <element signature="e#9728#9729#0" expanded="true" />
-            <element signature="e#10131#10147#0" expanded="true" />
-            <element signature="e#10494#10738#0" expanded="true" />
-            <element signature="e#10737#10738#0" expanded="true" />
-            <element signature="e#10740#11027#0" expanded="true" />
-            <element signature="e#11026#11027#0" expanded="true" />
-            <element signature="e#11477#11493#0" expanded="true" />
-            <element signature="e#11825#12069#0" expanded="true" />
-            <element signature="e#12068#12069#0" expanded="true" />
-            <element signature="e#12071#12358#0" expanded="true" />
-            <element signature="e#12357#12358#0" expanded="true" />
-            <element signature="e#13007#13023#0" expanded="true" />
-            <element signature="e#14471#14487#0" expanded="true" />
-            <element signature="e#14766#15060#0" expanded="true" />
-            <element signature="e#15059#15060#0" expanded="true" />
-            <element signature="e#15062#15349#0" expanded="true" />
-            <element signature="e#15348#15349#0" expanded="true" />
-            <element signature="e#15857#15873#0" expanded="true" />
-            <element signature="e#16157#16526#0" expanded="true" />
-            <element signature="e#16525#16526#0" expanded="true" />
-            <element signature="e#16528#16815#0" expanded="true" />
-            <element signature="e#16814#16815#0" expanded="true" />
-            <element signature="e#17442#17458#0" expanded="true" />
-            <element signature="e#17740#18118#0" expanded="true" />
-            <element signature="e#18117#18118#0" expanded="true" />
-            <element signature="e#18120#18407#0" expanded="true" />
-            <element signature="e#18406#18407#0" expanded="true" />
-            <element signature="e#27811#27827#0" expanded="true" />
-            <element signature="e#28564#28808#0" expanded="true" />
-            <element signature="e#28807#28808#0" expanded="true" />
-            <element signature="e#28810#29097#0" expanded="true" />
-            <element signature="e#29096#29097#0" expanded="true" />
-            <element signature="e#29711#29955#0" expanded="true" />
-            <element signature="e#29954#29955#0" expanded="true" />
-            <element signature="e#29957#30244#0" expanded="true" />
-            <element signature="e#30243#30244#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/ProfileFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="100" column="24" selection-start-line="100" selection-start-column="24" selection-end-line="100" selection-end-column="24" />
         </state>
       </provider>
     </entry>
