@@ -123,7 +123,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         if (remoteMessage.getNotification() != null) {
             // Загрузка иконок и картинок
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-            Bitmap enotik = BitmapFactory.decodeResource(getResources(), R.drawable.ic_menu_send);
+            Bitmap enotik = BitmapFactory.decodeResource(getResources(), R.drawable.baseline_announcement_white_18dp);
 
             // Создание уведомления
             Context context = getApplicationContext();
@@ -131,7 +131,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                     new NotificationCompat.Builder(this, "notify_001")
                             .setContentTitle("Custom уведомление")
                             .setContentText("Текст уведомления")
-                            .setSmallIcon(R.drawable.ic_menu_camera)
+                            .setSmallIcon(R.drawable.baseline_announcement_white_18dp)
                             .setLargeIcon(enotik);
 
             Notification notification = mBuilder.build();

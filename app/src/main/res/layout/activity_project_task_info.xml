@@ -6,4 +6,117 @@
     android:layout_height="match_parent"
     tools:context=".Activities.ProjectTaskInfo">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:minWidth="260dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Task Info"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="191dp"
+            tools:layout_editor_absoluteY="498dp" />
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="260dp"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/fromUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="@string/hint_password"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="354dp"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/toGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="@string/hint_password"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="354dp"
+            tools:targetApi="o" />
+
+
+        <EditText
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="@string/hint_password"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="354dp"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
+            android:hint="@string/hint_password"
+            android:textSize="14sp"
+            tools:layout_editor_absoluteX="17dp"
+            tools:layout_editor_absoluteY="354dp"
+            tools:targetApi="o" />
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:enabled="false"
+            android:focusable="false"
+            android:inputType="textMultiLine"
+            android:textSize="14sp" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

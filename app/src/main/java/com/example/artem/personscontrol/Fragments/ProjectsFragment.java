@@ -78,6 +78,7 @@ public class ProjectsFragment extends Fragment {
         templUser.isComplite = group.isComplite;
         templUser.beginTime = group.beginTime;
         templUser.endTime = group.endTime;
+        templUser.groups = group.groups;
 
         if (getActivity() != null) {
             Intent intent = new Intent(getActivity(), ProjectInfo.class);

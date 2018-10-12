@@ -573,8 +573,9 @@ public class Network_connections {
                     for(Map<String, Object> task : tasksProjects) {
                         ProjectTasks gTask = new ProjectTasks(task);
                         for (Map<String, Object> project : projects) {
-                            if (new Projects(project).id == gTask.toProjectId)
+                            if (new Projects(project).id == gTask.toProjectId) {
                                 gTask.project = new Projects(project);
+                            }
                         }
                         if (!Data_Singleton.getInstance().projectTasks.contains(gTask)) {
                             Data_Singleton.getInstance().projectTasks.add(gTask);
