@@ -12,19 +12,15 @@ import android.widget.Filterable;
 import android.widget.TextView;
 
 import com.example.artem.personscontrol.AspNet_Classes.Projects;
-import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 import com.example.artem.personscontrol.Fragments.ProjectsFragment;
 import com.example.artem.personscontrol.R;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.ZoneId;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.time.format.DateTimeFormatter;
 import java.util.TimeZone;
 
 public class Adapter_Projects  extends BaseAdapter implements Filterable {
@@ -66,7 +62,7 @@ public class Adapter_Projects  extends BaseAdapter implements Filterable {
         if(convertView == null)
             convertView = layoutInflater.inflate(R.layout.project_row, null);
 
-        TextView title =  (TextView) convertView.findViewById(R.id.projName);
+        TextView title =  (TextView) convertView.findViewById(R.id.statusTextView);
         TextView owner =  (TextView) convertView.findViewById(R.id.ownerName);
         TextView deadline =  (TextView) convertView.findViewById(R.id.deadLineTextView);
 
@@ -80,15 +76,16 @@ public class Adapter_Projects  extends BaseAdapter implements Filterable {
             dateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
             Calendar cal = Calendar.getInstance();
             Date dt = (Date) dateFormat.parse(projects.get(position).endTime);
-            if(cal.getTime().after(dt) && !projects.get(position).isComplite){
-                deadline.setBackgroundColor(Color.RED);
+            if(cal.getTime().after(dt) && !projects.get(position).isComplite ){
+                deadline.setBackgroundColor(Color.parseColor("#ff0000"));
                 deadline.setText("\tMissing time\t");
             } else if(!cal.getTime().after(dt) && !projects.get(position).isComplite){
-                deadline.setBackgroundColor(Color.YELLOW);
+                deadline.setBackgroundColor(Color.parseColor("#F44F0D"));
                 deadline.setText("\tIn progress\t");
             } else {
-                deadline.setBackgroundColor(Color.GREEN);
+                deadline.setBackgroundColor(Color.parseColor("#02ff13"));
                 deadline.setText("\tComplited\t");
+                deadline.setTextColor(Color.GRAY);
             }
 
         } catch (ParseException e) {

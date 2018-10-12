@@ -16,7 +16,7 @@
         android:text="TextView"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/fromUserTextView"
-        app:layout_constraintEnd_toStartOf="@+id/projName"
+        app:layout_constraintEnd_toStartOf="@+id/statusTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,7 +34,7 @@
         app:layout_constraintVertical_bias="0.113" />
 
     <TextView
-        android:id="@+id/projName"
+        android:id="@+id/statusTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

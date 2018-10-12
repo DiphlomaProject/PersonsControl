@@ -18,6 +18,10 @@ public class UserTasks implements Serializable {
     public User userFrom;
     public User userTo;
 
+    public UserTasks(){
+
+    }
+
     public UserTasks(Map<String, Object> map){
         id = (Integer) map.get("Id");
         title = (String) map.get("title");

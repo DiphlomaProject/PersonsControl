@@ -57,7 +57,7 @@ public class Adapter_Groups extends BaseAdapter implements Filterable {
         if(convertView == null)
             convertView = layoutInflater.inflate(R.layout.group_row, null);
 
-        TextView title =  (TextView) convertView.findViewById(R.id.projName);
+        TextView title =  (TextView) convertView.findViewById(R.id.statusTextView);
         TextView owner =  (TextView) convertView.findViewById(R.id.ownerName);
 
         title.setText(users.get(position).title);

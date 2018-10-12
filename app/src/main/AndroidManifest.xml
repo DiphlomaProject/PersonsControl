@@ -44,7 +44,11 @@
         </service>
 
         <activity android:name=".SignUp" />
-        <activity android:name=".Activities.ProjectInfo"></activity>
+        <activity android:name=".Activities.ProjectInfo" />
+        <activity android:name=".Activities.GroupInfo" />
+        <activity android:name=".Activities.TaskInfo" />
+        <activity android:name=".Activities.GroupTaskInfo" />
+        <activity android:name=".Activities.ProjectTaskInfo"></activity>
     </application>
 
 </manifest>

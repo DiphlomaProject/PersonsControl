@@ -2,6 +2,7 @@ package com.example.artem.personscontrol.Fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import com.example.artem.personscontrol.Activities.GroupInfo;
 import com.example.artem.personscontrol.Adapters.Adapter_Groups;
 import com.example.artem.personscontrol.AspNet_Classes.Groups;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
@@ -72,10 +74,9 @@ public class GroupsFragment extends Fragment {
         templUser.ownerInfo = group.ownerInfo;
         templUser.desc = group.desc;
 
-//        Intent intent = new Intent(getContext(), AdminUserInfo.class);
-//        intent.putExtra("admin_user_info", templUser);
-//        intent.putExtra("admin_user_info_bmp", user_firebase.photoBMP);
-//        startActivity(intent);
+        Intent intent = new Intent(getContext(), GroupInfo.class);
+        intent.putExtra("group_info", templUser);
+        startActivity(intent);
     }
 
 }

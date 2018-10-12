@@ -17,6 +17,10 @@ public class ProjectTasks implements Serializable {
     public User userFrom;
     public Projects project;
 
+    public ProjectTasks(){
+
+    }
+
     public ProjectTasks(Map<String, Object> map){
         id = (Integer) map.get("Id");
         title = (String) map.get("title");

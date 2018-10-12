@@ -17,6 +17,10 @@ public class GroupTasks implements Serializable {
     public User userFrom;
     public Groups group;
 
+    public GroupTasks(){
+
+    }
+
     public GroupTasks(Map<String, Object> map){
         id = (Integer) map.get("Id");
         title = (String) map.get("title");
