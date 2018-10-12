@@ -355,6 +355,7 @@ public class DiskBasedCache implements Cache {
 
     /** Handles holding onto the cache headers for an entry. */
     // VisibleForTesting
+    @SuppressWarnings("UnnecessaryParentheses")
     static class CacheHeader {
         /** The size of the data identified by this CacheHeader. (This is not serialized to disk. */
         long size;
