@@ -65,7 +65,7 @@ public class NavigationActivity extends BaseActivity
 
         header = navigationView.getHeaderView(0);
 //        header.setBackgroundResource(R.drawable.background_five_colors);
-        header.setBackgroundResource(R.drawable.register);
+        header.setBackgroundResource(R.drawable.register_crop);
 
         network_connections = new Network_connections();
         network_connections.RegisterCallBack(this);

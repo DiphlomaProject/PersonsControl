@@ -7,13 +7,14 @@
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="7dp"
         android:text="Project:"
+        android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toTopOf="@+id/fromUserTextView"
         app:layout_constraintEnd_toStartOf="@+id/statusTextView"
@@ -22,21 +23,23 @@
 
     <TextView
         android:id="@+id/fromUserTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Company:"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/titleTextView"
         app:layout_constraintStart_toStartOf="@+id/titleTextView"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
 
     <TextView
         android:id="@+id/statusTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        android:textAlignment="center"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/titleTextView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,9 +49,10 @@
 
     <TextView
         android:id="@+id/ownerName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/fromUserTextView"
         app:layout_constraintEnd_toEndOf="@+id/statusTextView"
         app:layout_constraintStart_toStartOf="@+id/statusTextView"
@@ -57,11 +61,12 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginBottom="8dp"
         android:text="Deadline:"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/fromUserTextView"
         app:layout_constraintStart_toStartOf="@+id/fromUserTextView"
@@ -69,13 +74,14 @@
 
     <TextView
         android:id="@+id/deadLineTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="@+id/ownerName"
         app:layout_constraintStart_toStartOf="@+id/ownerName"
         app:layout_constraintTop_toTopOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.0"/>
+        app:layout_constraintVertical_bias="0.0" />
 
 </android.support.constraint.ConstraintLayout>
