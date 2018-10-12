@@ -64,7 +64,8 @@ public class NavigationActivity extends BaseActivity
         Data_Singleton.getInstance().navigationActivity = this;
 
         header = navigationView.getHeaderView(0);
-        header.setBackgroundResource(R.drawable.background_five_colors);
+//        header.setBackgroundResource(R.drawable.background_five_colors);
+        header.setBackgroundResource(R.drawable.register);
 
         network_connections = new Network_connections();
         network_connections.RegisterCallBack(this);
