@@ -21,6 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
+import com.example.artem.personscontrol.Fragments.AboutFragment;
 import com.example.artem.personscontrol.Fragments.ProfileFragment;
 import com.example.artem.personscontrol.Fragments.SettingsFragment;
 import com.example.artem.personscontrol.SupportLibrary.Network_connections;
@@ -169,7 +170,8 @@ public class NavigationActivity extends BaseActivity
             this.showProgressDialog();
             network_connections.GetUsersGroups(this, Data_Singleton.getInstance().currentUser.token, Data_Singleton.getInstance().currentUser.id);
         }else if (id == R.id.nav_about) {
-
+            this.setTitle("About");
+            getFragmentManager().beginTransaction().replace(R.id.navigation_container, new AboutFragment()).commit();
         }else if (id == R.id.nav_settings) {
             this.setTitle("Settings");
             getFragmentManager().beginTransaction().replace(R.id.navigation_container, new SettingsFragment()).commit();

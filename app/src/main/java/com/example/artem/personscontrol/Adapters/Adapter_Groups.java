@@ -76,9 +76,9 @@ public class Adapter_Groups extends BaseAdapter implements Filterable {
         });
 
         if(position % 2 != 0 )
-            convertView.setBackgroundColor(Color.parseColor("#4fc2f7"));
-//        else #8bf5ff
-//            convertView.setBackgroundColor(Color.parseColor("#4fc2f7"));
+            convertView.setBackgroundColor(Color.parseColor("#4dd0e1"));
+        else
+            convertView.setBackgroundColor(Color.parseColor("#88ffff"));
 
         return convertView;
     }
