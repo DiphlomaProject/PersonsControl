@@ -1,12 +1,15 @@
 package com.example.artem.personscontrol.Activities;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -28,11 +31,14 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.TimeZone;
 
+import static com.example.artem.personscontrol.SupportLibrary.Network_connections.CompleteTaskPersonal_Action;
 import static com.example.artem.personscontrol.SupportLibrary.Network_connections.CompleteTaskProject_Action;
 
-public class ProjectTaskInfo extends AppCompatActivity {
+public class ProjectTaskInfo extends BaseActivity {
 
     ProjectTasks project_info;
+    Context context = this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,6 +73,14 @@ public class ProjectTaskInfo extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        ((Button) this.findViewById(R.id.compliteButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Network_connections network_connections = new Network_connections();
+                network_connections.CompleteTask(context, Data_Singleton.getInstance().currentUser.token, Integer.toString(project_info.id), CompleteTaskProject_Action);
+            }
+        });
     }
 
     @Override
@@ -81,7 +95,7 @@ public class ProjectTaskInfo extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_accept_task:
                 Network_connections network_connections = new Network_connections();
-                network_connections.CompleteTask(this, Integer.toString(project_info.id), Data_Singleton.getInstance().currentUser.token, CompleteTaskProject_Action);
+                network_connections.CompleteTask(context, Data_Singleton.getInstance().currentUser.token, Integer.toString(project_info.id), CompleteTaskProject_Action);
                 return true;
 
             default:

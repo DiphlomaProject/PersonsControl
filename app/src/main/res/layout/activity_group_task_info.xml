@@ -103,5 +103,12 @@
             android:inputType="textMultiLine"
             android:textSize="14sp" />
 
+        <Button
+            android:id="@+id/compliteButton"
+            style="@android:style/Widget.Button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Complite" />
+
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

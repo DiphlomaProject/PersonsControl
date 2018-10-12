@@ -1,15 +1,19 @@
 package com.example.artem.personscontrol.Activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.artem.personscontrol.AspNet_Classes.GroupTasks;
 import com.example.artem.personscontrol.AspNet_Classes.Groups;
+import com.example.artem.personscontrol.BaseActivity;
 import com.example.artem.personscontrol.DataClasses.Data_Singleton;
 import com.example.artem.personscontrol.R;
 import com.example.artem.personscontrol.SupportLibrary.Network_connections;
@@ -22,11 +26,13 @@ import java.util.Date;
 import java.util.TimeZone;
 
 import static com.example.artem.personscontrol.SupportLibrary.Network_connections.CompleteTaskGroup_Action;
+import static com.example.artem.personscontrol.SupportLibrary.Network_connections.CompleteTaskPersonal_Action;
 import static com.example.artem.personscontrol.SupportLibrary.Network_connections.CompleteTaskProject_Action;
 
-public class GroupTaskInfo extends AppCompatActivity {
+public class GroupTaskInfo extends BaseActivity {
 
     GroupTasks group_info;
+    Context context = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +61,14 @@ public class GroupTaskInfo extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
+
+        ((Button) this.findViewById(R.id.compliteButton)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Network_connections network_connections = new Network_connections();
+                network_connections.CompleteTask(context, Data_Singleton.getInstance().currentUser.token, Integer.toString(group_info.id), CompleteTaskGroup_Action);
+            }
+        });
     }
 
     @Override
@@ -69,7 +83,7 @@ public class GroupTaskInfo extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.menu_accept_task:
                 Network_connections network_connections = new Network_connections();
-                network_connections.CompleteTask(this, Integer.toString(group_info.id), Data_Singleton.getInstance().currentUser.token, CompleteTaskGroup_Action);
+                network_connections.CompleteTask(context, Data_Singleton.getInstance().currentUser.token, Integer.toString(group_info.id), CompleteTaskGroup_Action);
                 return true;
 
             default:
