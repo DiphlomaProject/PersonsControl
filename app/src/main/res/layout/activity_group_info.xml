@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.GroupInfo">
+    tools:context=".Activities.GroupInfo"
+    android:background="#2196f3">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -28,6 +29,7 @@
             android:layout_height="wrap_content"
             android:text="Group Info"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textColor="@android:color/white"
             android:textSize="24sp"
             tools:layout_editor_absoluteX="191dp"
             tools:layout_editor_absoluteY="498dp" />
@@ -43,6 +45,7 @@
             android:focusable="false"
             android:hint="@string/name"
             android:inputType="textPersonName"
+            android:textColor="@android:color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="17dp"
             tools:layout_editor_absoluteY="260dp"
@@ -58,6 +61,7 @@
             android:enabled="false"
             android:focusable="false"
             android:hint="@string/hint_password"
+            android:textColor="@android:color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="17dp"
             tools:layout_editor_absoluteY="354dp"
@@ -71,6 +75,7 @@
             android:enabled="false"
             android:focusable="false"
             android:inputType="textMultiLine"
+            android:textColor="@android:color/white"
             android:textSize="14sp" />
 
     </LinearLayout>

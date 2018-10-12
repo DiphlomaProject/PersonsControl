@@ -68,6 +68,10 @@ public class TasksFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
     public void ShowSelectedUserInfo(UserTasks task){
         UserTasks templUser = new UserTasks();

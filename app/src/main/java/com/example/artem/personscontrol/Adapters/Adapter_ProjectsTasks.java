@@ -103,9 +103,9 @@ public class Adapter_ProjectsTasks extends BaseAdapter implements Filterable {
         });
 
         if(position % 2 != 0 )
-            convertView.setBackgroundColor(Color.parseColor("#4dd0e1"));
+            convertView.setBackgroundColor(Color.parseColor("#e2f1f8"));
         else
-            convertView.setBackgroundColor(Color.parseColor("#88ffff"));
+            convertView.setBackgroundColor(Color.parseColor("#6ec6ff"));
 
         return convertView;
     }

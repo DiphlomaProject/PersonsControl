@@ -66,6 +66,11 @@ public class TasksGroupsFragment extends Fragment {
 
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     public void ShowSelectedUserInfo(GroupTasks group){
         GroupTasks templUser = new GroupTasks();
         templUser.id = group.id;

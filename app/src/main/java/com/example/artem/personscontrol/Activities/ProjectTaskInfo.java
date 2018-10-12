@@ -38,6 +38,7 @@ public class ProjectTaskInfo extends BaseActivity {
 
     ProjectTasks project_info;
     Context context = this;
+    Activity activity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +80,7 @@ public class ProjectTaskInfo extends BaseActivity {
             public void onClick(View v) {
                 Network_connections network_connections = new Network_connections();
                 network_connections.CompleteTask(context, Data_Singleton.getInstance().currentUser.token, Integer.toString(project_info.id), CompleteTaskProject_Action);
+                finish();
             }
         });
     }

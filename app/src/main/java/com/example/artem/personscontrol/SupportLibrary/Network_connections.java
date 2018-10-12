@@ -1,6 +1,7 @@
 package com.example.artem.personscontrol.SupportLibrary;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
@@ -644,6 +645,7 @@ public class Network_connections {
                     @Override
                     public void onResponse(JSONObject response) {
                         ((BaseActivity)context).hideProgressDialog();
+                        Data_Singleton.getInstance().isNeedReload = true;
                     }
                 }, new Response.ErrorListener() {
                     @SuppressLint("LongLogTag")

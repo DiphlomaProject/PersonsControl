@@ -1,5 +1,6 @@
 package com.example.artem.personscontrol.Activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class GroupTaskInfo extends BaseActivity {
 
     GroupTasks group_info;
     Context context = this;
+    Activity activity = this;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,7 @@ public class GroupTaskInfo extends BaseActivity {
             public void onClick(View v) {
                 Network_connections network_connections = new Network_connections();
                 network_connections.CompleteTask(context, Data_Singleton.getInstance().currentUser.token, Integer.toString(group_info.id), CompleteTaskGroup_Action);
+                finish();
             }
         });
     }

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SignUp"
-    tools:layout_editor_absoluteY="25dp">
+    tools:layout_editor_absoluteY="25dp"
+    android:background="#2196f3">
 
     <TextView
         android:id="@+id/textView8"
@@ -17,6 +18,7 @@
         android:layout_marginBottom="16dp"
         android:text="@string/signup"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="@android:color/white"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,11 +32,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:minWidth="260dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8">
@@ -48,6 +50,8 @@
             android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="17dp"
             tools:layout_editor_absoluteY="260dp"
@@ -70,6 +74,8 @@
             android:ems="10"
             android:hint="@string/hint_email"
             android:inputType="textEmailAddress"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="21dp"
             tools:layout_editor_absoluteY="307dp"
@@ -92,6 +98,8 @@
             android:ems="10"
             android:hint="@string/hint_password"
             android:inputType="textPersonName|textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="17dp"
             tools:layout_editor_absoluteY="354dp"
@@ -114,6 +122,8 @@
             android:ems="10"
             android:hint="@string/repeat_password"
             android:inputType="textPersonName|textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
             android:textSize="14sp"
             tools:layout_editor_absoluteX="12dp"
             tools:layout_editor_absoluteY="401dp"
@@ -134,21 +144,6 @@
             android:text="@string/write_correctly_password_and_repeat"
             android:textColor="@android:color/holo_red_light"
             android:visibility="invisible" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayout5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <Button
             android:id="@+id/buttonSignUp"
@@ -156,8 +151,10 @@
             android:layout_height="match_parent"
             android:background="@android:color/white"
             android:text="@string/signup"
+            android:textColorHint="@android:color/white"
             tools:layout_editor_absoluteX="167dp"
             tools:layout_editor_absoluteY="595dp" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

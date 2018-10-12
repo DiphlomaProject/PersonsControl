@@ -47,6 +47,11 @@ public class TasksProjectsFragment extends Fragment {
         //return inflater.inflate(R.layout.fragment_tasks_groups, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
     public void DrowGroups(){
         if(linesGroups.isEmpty()) return;
 
