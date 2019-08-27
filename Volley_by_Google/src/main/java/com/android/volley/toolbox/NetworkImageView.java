@@ -14,7 +14,8 @@
 package com.android.volley.toolbox;
 
 import android.content.Context;
-import android.support.annotation.MainThread;
+
+import androidx.annotation.MainThread;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.ViewGroup.LayoutParams;
