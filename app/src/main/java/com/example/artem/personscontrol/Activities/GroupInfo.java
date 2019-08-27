@@ -1,9 +1,10 @@
 package com.example.artem.personscontrol.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.artem.personscontrol.AspNet_Classes.Groups;
 import com.example.artem.personscontrol.R;
