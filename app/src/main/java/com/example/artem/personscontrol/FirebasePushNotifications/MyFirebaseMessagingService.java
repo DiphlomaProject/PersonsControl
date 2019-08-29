@@ -61,7 +61,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             // Создание уведомления
             Context context = getApplicationContext();
             NotificationCompat.Builder mBuilder =
-                    new NotificationCompat.Builder(this, "notify_001")
+                    new NotificationCompat.Builder(this, "PersonControl_notification_chanel_main")
                             .setContentTitle(remoteMessage.getData().get("title"))
                             .setContentText(remoteMessage.getData().get("message"))
                             .setSmallIcon(R.drawable.baseline_announcement_white_18dp)

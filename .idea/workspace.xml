@@ -12,157 +12,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b570c9b-dfbf-4379-9a2d-a37b7fec09b9" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/bintray.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/consumer-proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/publish-snapshot-on-commit.sh" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/rules.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/AuthFailureError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/Cache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/CacheDispatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/ClientError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/DefaultRetryPolicy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/ExecutorDelivery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/Header.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/Network.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/NetworkDispatcher.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/NetworkError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/NetworkResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/NoConnectionError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/ParseError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/Request.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/RequestQueue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/Response.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/ResponseDelivery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/RetryPolicy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/ServerError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/TimeoutError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/VolleyError.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/VolleyLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/AdaptedHttpStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/AndroidAuthenticator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/Authenticator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/BaseHttpStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/BasicNetwork.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/ByteArrayPool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/ClearCacheRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/DiskBasedCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/HttpClientStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/HttpHeaderParser.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/HttpResponse.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/HttpStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/HurlStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/ImageLoader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/ImageRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/JsonArrayRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/JsonObjectRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/JsonRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/NetworkImageView.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/NoCache.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/PoolingByteArrayOutputStream.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/RequestFuture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/StringRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/Threads.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/main/java/com/android/volley/toolbox/Volley.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/CacheDispatcherTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/NetworkDispatcherTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/NetworkResponseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/RequestQueueIntegrationTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/RequestQueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/RequestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/ResponseDeliveryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/mock/MockHttpStack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/mock/MockRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/mock/ShadowSystemClock.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/mock/TestRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/AdaptedHttpStackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/AndroidAuthenticatorTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/BaseHttpStackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/BasicNetworkTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/ByteArrayPoolTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/CacheTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/DiskBasedCacheTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/HttpClientStackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/HttpHeaderParserTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/HttpStackConformanceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/HurlStackTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/ImageLoaderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/ImageRequestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/JsonRequestCharsetTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/JsonRequestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/NetworkImageViewTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/PoolingByteArrayOutputStreamTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/RequestFutureTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/RequestQueueTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/RequestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/ResponseTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/toolbox/StringRequestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/utils/CacheTestUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/java/com/android/volley/utils/ImmediateResponseDelivery.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Volley_by_Google/src/test/resources/org.robolectric.Config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupTaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupTaskInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectTaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectTaskInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/TaskInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/TaskInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseInstanceIDService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseInstanceIDService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Fragments/ProfileFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Fragments/ProfileFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Fragments/ProjectsFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Fragments/ProjectsFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Fragments/TasksFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Fragments/TasksFragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SupportLibrary/Network_connections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_in.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout-v26/activity_sign_up.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_task_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_group_task_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_task_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_project_task_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_in.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_sign_up.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_task_info.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_task_info.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_about.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_groups.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_projects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_projects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasks.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasks.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasks_groups.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasks_groups.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasks_projects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_tasks_projects.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_user_account.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/group_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/group_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/nav_header_navigation.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/project_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/project_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/status_task_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/status_task_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -189,97 +46,23 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/TaskInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-404">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectTaskInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupTaskInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-238">
-              <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseInstanceIDService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-845">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/UserAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <state relative-caret-position="74">
+              <caret line="63" column="96" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="96" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-825">
-              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java">
+        <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+            <state relative-caret-position="665">
+              <caret line="58" column="11" lean-forward="true" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -310,7 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/backup_descriptor.xml" />
         <option value="$PROJECT_DIR$/gradle.properties" />
         <option value="$PROJECT_DIR$/Volley_by_Google/bintray.gradle" />
@@ -348,10 +130,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/GroupTaskInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectInfo.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseInstanceIDService.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/UserAccount.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -372,6 +155,29 @@
             <path>
               <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="personscontrol" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="personscontrol" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="FirebasePushNotifications" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="PersonsControl_Andorid" type="1abcf292:AndroidViewProjectNode" />
@@ -506,7 +312,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24964234" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Captures" order="2" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="3" />
@@ -516,19 +322,20 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.28674698" />
-      <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.28674698" />
+      <window_info anchor="bottom" id="Android Profiler" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Logcat" order="11" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32891566" />
       <window_info anchor="right" id="Preview" weight="0.3297568" />
+      <window_info anchor="right" id="Assistant" weight="0.3297568" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -586,14 +393,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="27" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -858,6 +657,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-825">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/UserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseInstanceIDService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/Activities/ProjectTaskInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -886,44 +719,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseInstanceIDService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_swap_vertical_circle_white_24dp.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_announcement_white_48.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_announcement_white_24.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/FirebasePushNotifications/MyFirebaseMessagingService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-845">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="20" column="36" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+        <state relative-caret-position="74">
+          <caret line="63" column="96" selection-start-line="63" selection-start-column="58" selection-end-line="63" selection-end-column="96" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignUp.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-825">
-          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/artem/personscontrol/SignIn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="55" lean-forward="true" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+        <state relative-caret-position="665">
+          <caret line="58" column="11" lean-forward="true" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
         </state>
       </provider>
     </entry>
